@@ -1,0 +1,11 @@
+{
+	"i18n": true,
+	"type": "panel",
+	"items": {
+		"port": {
+			"type": "number",
+			"label": "port",
+			"newLine": true
+		}
+	}
+}

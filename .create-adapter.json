@@ -1,0 +1,52 @@
+{
+	"expert": "yes",
+	"cli": false,
+	"adapterName": "flexcharts",
+	"title": "Fully featured eCharts",
+	"description": "Use all available features of eCharts within ioBroker",
+	"keywords": [
+		"chart",
+		"charts",
+		"echarts"
+	],
+	"contributors": "",
+	"authorName": "MyHomeMyData",
+	"authorGithub": "MyHomeMyData",
+	"authorEmail": "juergen.bonfert@gmail.com",
+	"features": [
+		"adapter",
+		"vis"
+	],
+	"adminFeatures": [
+		"tab"
+	],
+	"type": "visualization-widgets",
+	"startMode": "daemon",
+	"connectionType": "local",
+	"dataSource": "assumption",
+	"connectionIndicator": "yes",
+	"adapterSettings": [
+		{
+			"key": "port",
+			"inputType": "number",
+			"defaultValue": "8082"
+		}
+	],
+	"language": "JavaScript",
+	"nodeVersion": "16",
+	"adminUi": "json",
+	"tabReact": "no",
+	"releaseScript": "yes",
+	"indentation": "Tab",
+	"quotes": "single",
+	"es6class": "yes",
+	"tools": [
+		"ESLint",
+		"type checking"
+	],
+	"gitRemoteProtocol": "SSH",
+	"license": "MIT License",
+	"dependabot": "yes",
+	"target": "github",
+	"creatorVersion": "2.3.0"
+}
