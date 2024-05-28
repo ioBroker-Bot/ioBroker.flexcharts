@@ -53,7 +53,11 @@
 		"platform": "Javascript/Node.js",
 		"main": "main.js",
 		"icon": "flexcharts.png",
+		"webExtension": "widgets/flexcharts/js/flexcharts.js",
 		"enabled": true,
+        "localLinks": {
+            "_default": "%web_protocol%://%ip%:%web_port%/flexcharts/flexcharts.html?instance=%instance%"
+        },
 		"extIcon": "https://raw.githubusercontent.com/MyHomeMyData/ioBroker.flexcharts/main/admin/flexcharts.png",
 		"readme": "https://github.com/MyHomeMyData/ioBroker.flexcharts/blob/main/README.md",
 		"loglevel": "info",
@@ -99,7 +103,8 @@
 		]
 	},
 	"native": {
-		"port": "8082"
+		"port": "8082",
+		"webInstance": "*"
 	},
 	"objects": [],
 	"instanceObjects": [
