@@ -8,6 +8,9 @@
 // you need to create an adapter
 const utils = require('@iobroker/adapter-core');
 
+const http  = require('http');
+const url  = require('url');
+
 // Load your modules here, e.g.:
 // const fs = require("fs");
 
@@ -85,9 +88,77 @@ class Flexcharts extends utils.Adapter {
 
 		result = await this.checkGroupAsync('admin', 'admin');
 		this.log.info('check group user admin group admin: ' + result);
+
+		this.startWebServer();
+
 	}
 
-	/**
+	startWebServer(adapter) {
+		this.log.debug(`Starting web server on http://${this.config.bind}:${this.config.port}/`);
+
+		const server = http.createServer((req, res) => {
+			// Parse die URL und die Query-Parameter
+			this.log.debug(String(req.url));
+			const parsedUrl = url.parse(String(req.url), true);
+			this.log.debug(JSON.stringify(parsedUrl));
+			const queryParameters = parsedUrl.query;
+		
+			// Beispiel: Basis-URL, die verwendet wird, um die Weiterleitungs-URL zu erstellen
+			//const baseUrl = 'http://fritz.box';
+			const baseUrl = String(queryParameters.url);
+		
+			// Erstelle die Weiterleitungs-URL mit den übergebenen Parametern
+			let redirectUrl = '';
+			redirectUrl = baseUrl; // + '?' + new URLSearchParams(queryParameters).toString();
+		
+			// Setze den HTTP-Status auf 302 (Found) und die Location-Header auf die Weiterleitungs-URL
+			res.writeHead(302, { 'Location': redirectUrl });
+		
+			// Beende die Antwort
+			res.end();
+		});
+		
+		// Starte den Server
+		server.listen({port: this.config.port, host: this.config.bind}, () => {
+			this.log.info(`Server started on ${this.config.bind}:${this.config.port}`);
+		});
+		
+
+/*
+		this.__server = http.createServer(async (req, res) => {
+			const clientIp = req.socket.remoteAddress;
+			if (!clientIp) {
+				res.statusCode = 401;
+				res.write('Invalid key');
+				res.end();
+				this.log.debug(`Invalid key from unknown IP`);
+				return;
+			}
+			const parts = (req.url || '').split('?');
+			const url = parts[0];
+			const query = {};
+			(parts[1] || '').split('&').forEach(p => {
+				const pp = p.split('=');
+				query[pp[0]] = decodeURIComponent(pp[1] || '');
+			});
+	
+			const now = Date.now();
+
+			res.setHeader('Content-type', 'text');
+			res.write('Hello flexcharts!');
+			res.end();
+	
+		});
+	
+		this.__server.on('clientError', (err, socket) =>
+			socket.end('HTTP/1.1 400 Bad Request\r\n\r\n'));
+	
+		this.__server.listen({port: this.config.port || '127', host: this.config.bind}, () =>
+			this.log.info(`Server started on ${this.config.bind}:${this.config.port}`));
+*/
+	}
+	
+		/**
 	 * Is called when adapter shuts down - callback has to be called under any circumstances!
 	 * @param {() => void} callback
 	 */
@@ -104,7 +175,7 @@ class Flexcharts extends utils.Adapter {
 			callback();
 		}
 	}
-
+	
 	// If you need to react to object changes, uncomment the following block and the corresponding line in the constructor.
 	// You also need to subscribe to the objects with `this.subscribeObjects`, similar to `this.subscribeStates`.
 	// /**
