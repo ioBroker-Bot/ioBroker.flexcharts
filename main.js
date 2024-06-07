@@ -65,6 +65,7 @@ class Flexcharts extends utils.Adapter {
 
 		// In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
 		this.subscribeStates('testVariable');
+		this.subscribeStates('flexcharts.0.test.testMessage');
 		// You can also add a subscription for multiple states. The following line watches all states starting with "lights."
 		// this.subscribeStates('lights.*');
 		// Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
@@ -146,27 +147,6 @@ class Flexcharts extends utils.Adapter {
 			// Bestimme den MIME-Typ der Datei
 			const contentType = getMimeType(filePath);
 
-			var jsopts = {
-				xAxis: {
-				  type: 'category',
-				  data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-				},
-				yAxis: {
-				  type: 'value'
-				},
-				series: [
-				  {
-				  data: [150, 230, 224, 218, 135, 147, -50],
-				  type: 'line'
-				  }
-				]
-			};
-
-//			adapter.messageTo('myechart', { source: "flexcharts" }, result => {
-			this.sendTo('javascript.0','myechart', result => {
-				this.log.debug(JSON.stringify(result));
-			});
-
 			// Lese die Datei vom Dateisystem
 			fs.readFile(filePath, (error, content) => {
 				//this.log.debug(`content = ${content}`);
@@ -184,9 +164,21 @@ class Flexcharts extends utils.Adapter {
 					}
 				} else {
 					// Datei gefunden, sende den Inhalt
-					res.writeHead(200, { 'Content-Type': contentType });
-					content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(jsopts)));
-					res.end(content, 'utf-8');
+					if ((req.url) && (req.url.includes('index.html'))) {
+						this.sendTo('javascript.0', 'toScript', {
+							message: 'myechart',
+							data: query
+							},
+							result => {
+								res.writeHead(200, { 'Content-Type': contentType });
+								content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(result.options)));
+								res.end(content, 'utf-8');
+							}
+						);
+					} else {
+						res.writeHead(200, { 'Content-Type': contentType });
+						res.end(content, 'utf-8');
+					}
 				}
 			});
 		});
