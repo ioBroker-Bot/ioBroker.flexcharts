@@ -10,6 +10,8 @@ const utils = require('@iobroker/adapter-core');
 
 const http  = require('http');
 const url  = require('url');
+const fs = require('fs');
+const path = require('path');
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
@@ -96,6 +98,100 @@ class Flexcharts extends utils.Adapter {
 	startWebServer(adapter) {
 		this.log.debug(`Starting web server on http://${this.config.bind}:${this.config.port}/`);
 
+		// Hilfsfunktion, um den MIME-Typ basierend auf der Dateierweiterung zu bestimmen
+		const getMimeType = (filePath) => {
+			const extname = path.extname(filePath);
+			switch (extname) {
+				case '.html':
+					return 'text/html';
+				case '.js':
+					return 'application/javascript';
+				case '.css':
+					return 'text/css';
+				case '.json':
+					return 'application/json';
+				case '.png':
+					return 'image/png';
+				case '.jpg':
+					return 'image/jpg';
+				case '.gif':
+					return 'image/gif';
+				case '.svg':
+					return 'image/svg+xml';
+				default:
+					return 'application/octet-stream';
+			}
+		};
+
+		// Erstelle den HTTP-Server
+		const server = http.createServer((req, res) => {
+			this.log.debug(`Request for ${req.url}`);
+
+			const parts = (req.url || '').split('?');
+			const url = parts[0];
+			const query = {};
+			(parts[1] || '').split('&').forEach(p => {
+				const pp = p.split('=');
+				query[pp[0]] = decodeURIComponent(pp[1] || '');
+			});
+
+			// Datei-Pfad basierend auf der angeforderten URL
+			let filePath = '.' + url;
+			if (filePath == './') {
+				filePath = './index.html';
+			}
+			//this.log.debug(`filePath = ${filePath}`);
+			//this.log.debug(`query    = ${JSON.stringify(query)}`);
+
+			// Bestimme den MIME-Typ der Datei
+			const contentType = getMimeType(filePath);
+
+			var jsopts = {
+				xAxis: {
+				  type: 'category',
+				  data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+				},
+				yAxis: {
+				  type: 'value'
+				},
+				series: [
+				  {
+				  data: [150, 230, 224, 218, 135, 147, -50],
+				  type: 'line'
+				  }
+				]
+			};
+
+//			adapter.messageTo('myechart', { source: "flexcharts" }, result => {
+			this.sendTo('javascript.0','myechart', result => {
+				this.log.debug(JSON.stringify(result));
+			});
+
+			// Lese die Datei vom Dateisystem
+			fs.readFile(filePath, (error, content) => {
+				//this.log.debug(`content = ${content}`);
+				if (error) {
+					if (error.code == 'ENOENT') {
+						// Datei nicht gefunden
+						fs.readFile('./404.html', (error404, content404) => {
+							res.writeHead(404, { 'Content-Type': 'text/html' });
+							res.end(content404, 'utf-8');
+						});
+					} else {
+						// Ein anderer Fehler
+						res.writeHead(500);
+						res.end(`Server Error: ${error.code}`);
+					}
+				} else {
+					// Datei gefunden, sende den Inhalt
+					res.writeHead(200, { 'Content-Type': contentType });
+					content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(jsopts)));
+					res.end(content, 'utf-8');
+				}
+			});
+		});
+
+/*
 		const server = http.createServer((req, res) => {
 			// Parse die URL und die Query-Parameter
 			this.log.debug(String(req.url));
@@ -117,7 +213,8 @@ class Flexcharts extends utils.Adapter {
 			// Beende die Antwort
 			res.end();
 		});
-		
+*/
+
 		// Starte den Server
 		server.listen({port: this.config.port, host: this.config.bind}, () => {
 			this.log.info(`Server started on ${this.config.bind}:${this.config.port}`);

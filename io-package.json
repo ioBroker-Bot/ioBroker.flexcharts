@@ -61,7 +61,9 @@
 			"vis"
 		],
 		"mode": "daemon",
-		"type": "visualization-widgets",
+        "messagebox": true,
+        "subscribe": "messagebox",
+ 		"type": "visualization-widgets",
 		"compact": true,
 		"connectionType": "local",
 		"dataSource": "assumption",
