@@ -14,8 +14,7 @@
 	"authorGithub": "MyHomeMyData",
 	"authorEmail": "juergen.bonfert@gmail.com",
 	"features": [
-		"adapter",
-		"vis"
+		"adapter"
 	],
 	"adminFeatures": [
 		"tab"

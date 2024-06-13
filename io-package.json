@@ -57,9 +57,6 @@
 		"extIcon": "https://raw.githubusercontent.com/MyHomeMyData/ioBroker.flexcharts/main/admin/flexcharts.png",
 		"readme": "https://github.com/MyHomeMyData/ioBroker.flexcharts/blob/main/README.md",
 		"loglevel": "info",
-		"restartAdapters": [
-			"vis"
-		],
 		"mode": "daemon",
         "messagebox": true,
         "subscribe": "messagebox",
@@ -68,31 +65,12 @@
 		"connectionType": "local",
 		"dataSource": "assumption",
 		"adminUI": {
-			"config": "json",
-			"tab": "materialize"
-		},
-		"adminTab": {
-			"singleton": true,
-			"name": {
-				"en": "Fully featured eCharts",
-				"de": "Fully featured eCharts",
-				"ru": "Fully featured eCharts",
-				"pt": "Fully featured eCharts",
-				"nl": "Fully featured eCharts",
-				"fr": "Fully featured eCharts",
-				"it": "Fully featured eCharts",
-				"es": "Fully featured eCharts",
-				"pl": "Fully featured eCharts",
-				"zh-cn": "Fully featured eCharts"
-			},
-			"link": "",
-			"fa-icon": "info"
+			"config": "json"
 		},
 		"dependencies": [
 			{
 				"js-controller": ">=3.3.22"
-			},
-			"vis"
+			}
 		],
 		"globalDependencies": [
 			{
@@ -101,9 +79,7 @@
 		]
 	},
 	"native": {
-		"bind": "127.0.0.1",
-		"port": "8200",
-		"webInstance": "*"
+		"port": "8200"
 	},
 	"objects": [],
 	"instanceObjects": [
