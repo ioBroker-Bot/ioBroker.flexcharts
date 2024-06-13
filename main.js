@@ -164,20 +164,39 @@ class Flexcharts extends utils.Adapter {
 					}
 				} else {
 					// Datei gefunden, sende den Inhalt
-					if ((req.url) && (req.url.includes('index.html'))) {
+					if ((req.url) && (req.url.includes('echarts.html'))) {
 						this.sendTo('javascript.0', 'toScript', {
 							message: 'myechart',
 							data: query
 							},
 							result => {
-								res.writeHead(200, { 'Content-Type': contentType });
-								content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(result)));
-								res.end(content, 'utf-8');
+								// @ts-ignore
+								if (result.error) {
+									// @ts-ignore
+									this.log.debug(result.error);
+									this.demoChart(result => {
+										res.writeHead(200, { 'Content-Type': contentType });
+										content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(result)));
+										res.end(content, 'utf-8');
+									});
+								} else {
+									res.writeHead(200, { 'Content-Type': contentType });
+									content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(result)));
+									res.end(content, 'utf-8');
+								}
 							}
 						);
 					} else {
-						res.writeHead(200, { 'Content-Type': contentType });
-						res.end(content, 'utf-8');
+						if ((req.url) && ( (req.url.includes('index.html')) || (req.url == '/') )) {
+							this.demoChart(result => {
+								res.writeHead(200, { 'Content-Type': contentType });
+								content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(result)));
+								res.end(content, 'utf-8');
+							});
+						} else {
+							res.writeHead(200, { 'Content-Type': contentType });
+							res.end(content, 'utf-8');
+						}
 					}
 				}
 			});
@@ -188,7 +207,46 @@ class Flexcharts extends utils.Adapter {
 			this.log.info(`Server started on localhost:${this.config.port}`);
 		});
 	}
+
+	demoChart(callback) {
+		const data = [];
+		for (let i = 0; i <= 100; i++) {
+		let theta = (i / 100) * 360;
+		let r = 5 * (1 + Math.sin((theta / 180) * Math.PI));
+		data.push([r, theta]);
+		}
+		const option = {
+		title: {
+			text: 'Unknown Chart Type ==> Demo Chart: Two Value-Axes in Polar'
+		},
+		legend: {
+			data: ['line']
+		},
+		polar: {},
+		tooltip: {
+			trigger: 'axis',
+			axisPointer: {
+			type: 'cross'
+			}
+		},
+		angleAxis: {
+			type: 'value',
+			startAngle: 0
+		},
+		radiusAxis: {},
+		series: [
+			{
+			coordinateSystem: 'polar',
+			name: 'line',
+			type: 'line',
+			data: data
+			}
+		]
+		};
+		callback(option);
+	}
 	
+
 		/**
 	 * Is called when adapter shuts down - callback has to be called under any circumstances!
 	 * @param {() => void} callback
