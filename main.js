@@ -143,27 +143,47 @@ class Flexcharts extends utils.Adapter {
 				} else {
 					// Datei gefunden, sende den Inhalt
 					if ((req.url) && (req.url.includes('echarts.html'))) {
-						this.sendTo('javascript.0', 'toScript', {
-							message: 'myechart',
-							data: query
-							},
-							result => {
-								// @ts-ignore
-								if (result.error) {
-									// @ts-ignore
-									this.log.debug(result.error);
-									this.demoChart(result => {
-										res.writeHead(200, { 'Content-Type': contentType });
-										content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(result)));
-										res.end(content, 'utf-8');
-									});
-								} else {
-									res.writeHead(200, { 'Content-Type': contentType });
-									content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(result)));
-									res.end(content, 'utf-8');
-								}
+						if (query.source) {
+							switch (query.source) {
+								case 'script':
+									this.sendTo('javascript.0', 'toScript', {
+										message: 'myechart',
+										data: query
+										},
+										result => {
+											// @ts-ignore
+											if (result.error) {
+												// @ts-ignore
+												this.log.debug(result.error);
+												this.demoChart(result => {
+													res.writeHead(200, { 'Content-Type': contentType });
+													content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(result)));
+													res.end(content, 'utf-8');
+												});
+											} else {
+												res.writeHead(200, { 'Content-Type': contentType });
+												content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(result)));
+												res.end(content, 'utf-8');
+											}
+										}	
+									);
+									break;
+								case 'state':
+									if (query.id) {
+										this.getState(query.id, (error, result) => {
+											if ( (result) && (result.val) ) {
+												//this.log.debug(JSON.stringify(result.val));
+												res.writeHead(200, { 'Content-Type': contentType });
+												content = new Buffer(content.toString().replace('{ solution: 42 }',String(result.val)));
+												res.end(content, 'utf-8');
+											}
+										});
+									}
+									break;
+								default:
+									break;
 							}
-						);
+						}
 					} else {
 						if ((req.url) && ( (req.url.includes('index.html')) || (req.url == '/') )) {
 							this.demoChartGauge(result => {
@@ -187,41 +207,6 @@ class Flexcharts extends utils.Adapter {
 	}
 
 	demoChartGauge(callback) {
-		const gaugeData = [
-			{
-			  value: 20,
-			  name: 'Perfect',
-			  title: {
-				offsetCenter: ['0%', '-30%']
-			  },
-			  detail: {
-				valueAnimation: true,
-				offsetCenter: ['0%', '-20%']
-			  }
-			},
-			{
-			  value: 40,
-			  name: 'Good',
-			  title: {
-				offsetCenter: ['0%', '0%']
-			  },
-			  detail: {
-				valueAnimation: true,
-				offsetCenter: ['0%', '10%']
-			  }
-			},
-			{
-			  value: 60,
-			  name: 'Commonly',
-			  title: {
-				offsetCenter: ['0%', '30%']
-			  },
-			  detail: {
-				valueAnimation: true,
-				offsetCenter: ['0%', '40%']
-			  }
-			}
-		  ];
 		  const option = {
 			series: [
 			  {
@@ -258,7 +243,41 @@ class Flexcharts extends utils.Adapter {
 				  show: false,
 				  distance: 50
 				},
-				data: gaugeData,
+				data: [
+					{
+					  value: 20,
+					  name: 'Perfect',
+					  title: {
+						offsetCenter: ['0%', '-30%']
+					  },
+					  detail: {
+						valueAnimation: true,
+						offsetCenter: ['0%', '-20%']
+					  }
+					},
+					{
+					  value: 40,
+					  name: 'Good',
+					  title: {
+						offsetCenter: ['0%', '0%']
+					  },
+					  detail: {
+						valueAnimation: true,
+						offsetCenter: ['0%', '10%']
+					  }
+					},
+					{
+					  value: 60,
+					  name: 'Commonly',
+					  title: {
+						offsetCenter: ['0%', '30%']
+					  },
+					  detail: {
+						valueAnimation: true,
+						offsetCenter: ['0%', '40%']
+					  }
+					}
+				  ],
 				title: {
 					text: 'Unknown Chart Type ==> Demo Chart: Gauge',
 					fontSize: 14
