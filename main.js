@@ -147,7 +147,7 @@ class Flexcharts extends utils.Adapter {
 							switch (query.source) {
 								case 'script':
 									this.sendTo('javascript.0', 'toScript', {
-										message: 'myechart',
+										message: 'flexcharts',
 										data: query
 										},
 										result => {
@@ -170,11 +170,15 @@ class Flexcharts extends utils.Adapter {
 									break;
 								case 'state':
 									if (query.id) {
-										this.getState(query.id, (error, result) => {
+										this.getForeignState(query.id, (error, result) => {
 											if ( (result) && (result.val) ) {
 												//this.log.debug(JSON.stringify(result.val));
 												res.writeHead(200, { 'Content-Type': contentType });
 												content = new Buffer(content.toString().replace('{ solution: 42 }',String(result.val)));
+												res.end(content, 'utf-8');
+											} else {
+												res.writeHead(200, { 'Content-Type': contentType });
+												content = new Buffer('Could not read state id '+query.id);
 												res.end(content, 'utf-8');
 											}
 										});

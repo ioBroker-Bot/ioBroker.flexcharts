@@ -1,4 +1,4 @@
-![Logo](admin/flexcharts.png)
+![Logo](admin/flexcharts-icon-small.png)
 # ioBroker.flexcharts
 
 [![NPM version](https://img.shields.io/npm/v/iobroker.flexcharts.svg)](https://www.npmjs.com/package/iobroker.flexcharts)
@@ -12,80 +12,106 @@
 
 ## flexcharts adapter for ioBroker
 
-Use all available features of eCharts within ioBroker
+# Basic concept
+There are several adapters available to view charts within ioBroker. As far as I know, all of them are using a UI to configure content and options of the charts. Typically not all features of the used graphical sub system could be used. E.g. it's not possible to view fully featured stacked charts with eChart-Adapter.
 
-## Developer manual
-This section is intended for the developer. It can be deleted later.
+This adapter uses a different approach. It brings the complete feature set of [Apache eCharts](https://echarts.apache.org/en/index.html) to ioBroker. Take a look the [demo charts](https://echarts.apache.org/examples/en/index.html).
 
-### DISCLAIMER
+There is no UI to configure any chart. You have to define the chart yourself, the adapter takes care about visualization. Here's an example to make it clear. To create a stacked chart you store it's definition in an object state (json format):
 
-Please make sure that you consider copyrights and trademarks when you use names or logos of a company and add a disclaimer to your README.
-You can check other adapters for examples or ask in the developer community. Using a name or logo of a company without permission may cause legal problems for you.
-
-### Getting started
-
-You are almost done, only a few steps left:
-1. Clone the repository from GitHub to a directory on your PC:
-	```bash
-	git clone https://github.com/MyHomeMyData/ioBroker.flexcharts
-	```
-
-1. Head over to [main.js](main.js) and start programming!
-
-### Best Practices
-We've collected some [best practices](https://github.com/ioBroker/ioBroker.repositories#development-and-coding-best-practices) regarding ioBroker development and coding in general. If you're new to ioBroker or Node.js, you should
-check them out. If you're already experienced, you should also take a look at them - you might learn something new :)
-
-### Scripts in `package.json`
-Several npm scripts are predefined for your convenience. You can run them using `npm run <scriptname>`
-| Script name | Description |
-|-------------|-------------|
-| `test:js` | Executes the tests you defined in `*.test.js` files. |
-| `test:package` | Ensures your `package.json` and `io-package.json` are valid. |
-| `test:integration` | Tests the adapter startup with an actual instance of ioBroker. |
-| `test` | Performs a minimal test run on package files and your tests. |
-| `check` | Performs a type-check on your code (without compiling anything). |
-| `lint` | Runs `ESLint` to check your code for formatting errors and potential bugs. |
-| `translate` | Translates texts in your adapter to all required languages, see [`@iobroker/adapter-dev`](https://github.com/ioBroker/adapter-dev#manage-translations) for more details. |
-| `release` | Creates a new release, see [`@alcalzone/release-script`](https://github.com/AlCalzone/release-script#usage) for more details. |
-
-### Writing tests
-When done right, testing code is invaluable, because it gives you the 
-confidence to change your code while knowing exactly if and when 
-something breaks. A good read on the topic of test-driven development 
-is https://hackernoon.com/introduction-to-test-driven-development-tdd-61a13bc92d92. 
-Although writing tests before the code might seem strange at first, but it has very 
-clear upsides.
-
-The template provides you with basic tests for the adapter startup and package files.
-It is recommended that you add your own tests into the mix.
-
-### Publishing the adapter
-Using GitHub Actions, you can enable automatic releases on npm whenever you push a new git tag that matches the form 
-`v<major>.<minor>.<patch>`. We **strongly recommend** that you do. The necessary steps are described in `.github/workflows/test-and-release.yml`.
-
-Since you installed the release script, you can create a new
-release simply by calling:
-```bash
-npm run release
 ```
-Additional command line options for the release script are explained in the
-[release-script documentation](https://github.com/AlCalzone/release-script#command-line).
-
-To get your adapter released in ioBroker, please refer to the documentation 
-of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
-
-### Test the adapter manually with dev-server
-Please use `dev-server` to test and debug your adapter.
-
-You may install and start `dev-server` by calling from your dev directory:
-```bash
-npm install --global @iobroker/dev-server
-dev-server setup
-dev-server watch
+{ "tooltip": {"trigger": "axis","axisPointer": {"type": "shadow"}},
+  "legend": {},
+  "xAxis": [{"type": "category","data": ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]}],
+  "yAxis": [{"type": "value"}],
+  "dataZoom": [{"show": true,"start": 0, "end": 100}],
+  "series": [
+    { "name": "Grid", "type": "bar", "color": "#a30000", "stack": "Supply",
+      "data": [8,19,21,50,26,0,36]},
+    { "name": "PV", "type": "bar", "color": "#00a300", "stack": "Supply",
+      "data": [30,32,20,8,33,21,36]},
+    { "name": "Household", "type": "bar", "color": "#0000a3", "stack": "Consumption",
+      "data": [16,12,11,13,14,9,12]},
+    { "name": "Heat pump", "type": "bar", "color": "#0000ff", "stack": "Consumption",
+      "data": [22,24,30,20,22,12,25]},
+    { "name": "Wallbox", "type": "bar", "color": "#00a3a3", "stack": "Consumption",
+      "data": [0,15,0,25,23,0,35]}
+  ]
+}
 ```
 
-Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev-server#readme) for more details.
+flexchart adapter will then show this chart:
+![eChart1](chart1.png)
+
+Typically you will use Blockly or javascript to create and update content of this state.
+
+There is another possibility to directly hand over eCharts-data via recall function within javascript. For details see below.
+
+# Getting started
+
+### Install flexchart adapter
+
+Presently the adapter is availabe at Github only. Best way for installation is via command line interface:
+```
+iob url https://github.com/MyHomeMyData/ioBroker.flexcharts.git
+```
+Now add an instance in ioBroker GUI. The only configuration parameter of the adapter is the port number. You may use the default value of 8200 (used in examples shown here).
+
+### Using the adapter
+
+Wenn adapter is running you can access it via http://localhost:8200/echarts.html (replace `localhost` by address of your ioBroker server).
+
+You may use this address in iFrame widgets of vis or jarvis or other visualizations.
+
+To make it work, you have to provide additional parameters to tell the adapter about the source of data. Two options are availabe:
+* `source=state` => You provide chart data in an ioBroker state (json)
+* `source=script` => You provide chart data via a script (javascript or blockly)
+
+### Use state as source for an echart
+
+Example: http://localhost:8200/echarts.html?<mark style="background-color: #ffff00">source=state</mark>&<mark style="background-color: #00c000">id=0_userdata.0.echarts.chart1</mark>
+
+Flexcharts will evaluate state `0_userdata.0.echarts.chart1` as data for eChart. Try it: Create such a state and copy json data of example shown above (`{ "tooltip": { ...`) as state content, then access given address with a browser.
+
+### Use javascript as source for an echart
+
+This is a bit more complicated but much more efficient. You provide the charts data directly by your JS or Blocky script which is dynamically called by Flexcharts adapter.
+
+Again it's best to explain using an example. Create a script with this content (name of script does'nt matter):
+```
+const chart1 = {
+  "tooltip": {"trigger": "axis","axisPointer": {"type": "shadow"}},
+  "legend": {},
+  "xAxis": [{"type": "category","data": ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]}],
+  "yAxis": [{"type": "value"}],
+  "dataZoom": [{"show": true,"start": 0, "end": 100}],
+  "series": [
+    { "name": "Grid", "type": "bar", "color": "#a30000", "stack": "Supply",
+      "data": [8,19,21,50,26,0,36]},
+    { "name": "PV", "type": "bar", "color": "#00a300", "stack": "Supply",
+      "data": [30,32,20,8,33,21,36]},
+    { "name": "Household", "type": "bar", "color": "#0000a3", "stack": "Consumption",
+      "data": [16,12,11,13,14,9,12]},
+    { "name": "Heat pump", "type": "bar", "color": "#0000ff", "stack": "Consumption",
+      "data": [22,24,30,20,22,12,25]},
+    { "name": "Wallbox", "type": "bar", "color": "#00a3a3", "stack": "Consumption",
+      "data": [0,15,0,25,23,0,35]}
+  ]
+};
+
+onMessage('flexcharts', (params, callback) => {
+    console.log(`data = ${JSON.stringify(data)}`);
+    callback(chart1);
+});
+```
+
+Start the script and access this in a browser: http://localhost:8200/echarts.html?<mark style="background-color: #ffff00">source=script</mark>
+
+Same chart should show up as in previous example.
+
+Additional paramters can be forwarded to the script and will be available within the script in variable `data`. Try following command: `http://localhost:8200/echarts.html?source=script&chart=chart1&params={"period":"daily"}`
+
+This should give a log entry to your script: `data = {"source":"script","chart":"chart1","params":"{\"period\":\"daily\"}"}`
 
 ## Changelog
 <!--
