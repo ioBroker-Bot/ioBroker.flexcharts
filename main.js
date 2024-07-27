@@ -26,6 +26,9 @@ class Flexcharts extends utils.Adapter {
 			...options,
 			name: 'flexcharts',
 		});
+
+		this.webServer = null;
+
 		this.on('ready', this.onReady.bind(this));
 		this.on('stateChange', this.onStateChange.bind(this));
 		// this.on('objectChange', this.onObjectChange.bind(this));
@@ -45,31 +48,6 @@ class Flexcharts extends utils.Adapter {
 		// The adapters config (in the instance object everything under the attribute "native") is accessible via
 		// this.config:
 		this.log.info('config port: ' + this.config.port);
-
-		/*
-		For every state in the system there has to be also an object of type state
-		Here a simple template for a boolean variable named "testVariable"
-		Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
-		*/
-		await this.setObjectNotExistsAsync('testVariable', {
-			type: 'state',
-			common: {
-				name: 'testVariable',
-				type: 'boolean',
-				role: 'indicator',
-				read: true,
-				write: true,
-			},
-			native: {},
-		});
-
-		// In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
-		this.subscribeStates('testVariable');
-		this.subscribeStates('flexcharts.0.test.testMessage');
-		// You can also add a subscription for multiple states. The following line watches all states starting with "lights."
-		// this.subscribeStates('lights.*');
-		// Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
-		// this.subscribeStates('*');
 
 		this.startWebServer();
 	}
@@ -103,7 +81,7 @@ class Flexcharts extends utils.Adapter {
 		};
 
 		// Create HTTP-server for configured port
-		const server = http.createServer((req, res) => {
+		this.webServer = http.createServer((req, res) => {
 			this.log.debug(`Request for ${req.url}`);
 
 			const parts = (req.url || '').split('?');
@@ -207,7 +185,7 @@ class Flexcharts extends utils.Adapter {
 		});
 
 		// Start server
-		server.listen({port: this.config.port}, () => {
+		this.webServer.listen({port: this.config.port}, () => {
 			this.log.info(`Server started on localhost:${this.config.port}`);
 			this.setState('info.connection', true, true);
 		});
@@ -350,6 +328,10 @@ class Flexcharts extends utils.Adapter {
 	 */
 	onUnload(callback) {
 		try {
+			if (this.webServer) {
+				this.webServer.removeAllListeners();
+				this.webServer.close();
+			}
 			// Here you must clear all timeouts or intervals that may still be active
 			// clearTimeout(timeout1);
 			// clearTimeout(timeout2);
@@ -359,6 +341,7 @@ class Flexcharts extends utils.Adapter {
 			callback();
 		} catch (e) {
 			callback();
+			
 		}
 	}
 	
