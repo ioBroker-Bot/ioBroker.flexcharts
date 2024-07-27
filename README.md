@@ -69,11 +69,11 @@ To make it work, you have to provide additional parameters to tell the adapter a
 
 ### Use ioBroker state as source for an echart
 
-Example: `http://localhost:8200/echarts.html?source=stateid=0_userdata.0.echarts.chart1`
+Example: `http://localhost:8200/echarts.html?source=state&id=0_userdata.0.echarts.chart1`
 
 <!--
 Would this be better to read:
-Example: http://localhost:8200/echarts.html?<mark style="background-color: #ffff00">source=state</mark>&<mark style="background-color: #00c000">id=0_userdata.0.echarts.chart1</mark>
+Example: http://localhost:8200/echarts.html?<mark style="background-color: #ffff00">source=state</mark>&<mark style="background-color: #00c000">&id=0_userdata.0.echarts.chart1</mark>
 -->
 
 Flexcharts will evaluate state `0_userdata.0.echarts.chart1` as data for eChart. Try it: Create such a state and copy json data of example shown above (`{ "tooltip": { ...`) as state content, then access given address with a browser.
