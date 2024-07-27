@@ -209,6 +209,7 @@ class Flexcharts extends utils.Adapter {
 		// Start server
 		server.listen({port: this.config.port}, () => {
 			this.log.info(`Server started on localhost:${this.config.port}`);
+			this.setState('info.connection', true, true);
 		});
 	}
 

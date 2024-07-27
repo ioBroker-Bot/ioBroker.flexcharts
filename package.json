@@ -58,6 +58,7 @@
     "main.js",
     "echarts.html",
     "echarts.js.map",
+    "echarts.js",
     "index.html",
     "favicon.ico"
   ],
