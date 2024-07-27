@@ -77,7 +77,7 @@ class Flexcharts extends utils.Adapter {
 	startWebServer(adapter) {
 		this.log.debug(`Starting web server on http://localhost:${this.config.port}/`);
 
-		// Hilfsfunktion, um den MIME-Typ basierend auf der Dateierweiterung zu bestimmen
+		// Tools to select MIME-type based on file extension
 		const getMimeType = (filePath) => {
 			const extname = path.extname(filePath);
 			switch (extname) {
@@ -102,7 +102,7 @@ class Flexcharts extends utils.Adapter {
 			}
 		};
 
-		// Erstelle den HTTP-Server
+		// Create HTTP-server for configured port
 		const server = http.createServer((req, res) => {
 			this.log.debug(`Request for ${req.url}`);
 
@@ -114,7 +114,7 @@ class Flexcharts extends utils.Adapter {
 				query[pp[0]] = decodeURIComponent(pp[1] || '');
 			});
 
-			// Datei-Pfad basierend auf der angeforderten URL
+			// Extrect path of file from provided URL
 			let filePath = '.' + url;
 			if (filePath == './') {
 				filePath = './index.html';
@@ -122,32 +122,34 @@ class Flexcharts extends utils.Adapter {
 			//this.log.debug(`filePath = ${filePath}`);
 			//this.log.debug(`query    = ${JSON.stringify(query)}`);
 
-			// Bestimme den MIME-Typ der Datei
+			// Select MIME-type
 			const contentType = getMimeType(filePath);
 
-			// Lese die Datei vom Dateisystem
+			// Read file
 			fs.readFile(filePath, (error, content) => {
 				//this.log.debug(`content = ${content}`);
 				if (error) {
 					if (error.code == 'ENOENT') {
-						// Datei nicht gefunden
+						// File not found
 						fs.readFile('./404.html', (error404, content404) => {
 							res.writeHead(404, { 'Content-Type': 'text/html' });
 							res.end(content404, 'utf-8');
 						});
 					} else {
-						// Ein anderer Fehler
+						// Unknown error
 						res.writeHead(500);
 						res.end(`Server Error: ${error.code}`);
 					}
 				} else {
-					// Datei gefunden, sende den Inhalt
+					// File found, send content
 					if ((req.url) && (req.url.includes('echarts.html'))) {
 						if (query.source) {
 							switch (query.source) {
 								case 'script':
+									let message = 'flexcharts';
+									if (query.message) { message = query.message; }
 									this.sendTo('javascript.0', 'toScript', {
-										message: 'flexcharts',
+										message: message,
 										data: query
 										},
 										result => {
@@ -204,7 +206,7 @@ class Flexcharts extends utils.Adapter {
 			});
 		});
 
-		// Starte den Server
+		// Start server
 		server.listen({port: this.config.port}, () => {
 			this.log.info(`Server started on localhost:${this.config.port}`);
 		});
