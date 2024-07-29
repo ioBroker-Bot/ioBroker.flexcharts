@@ -9,6 +9,7 @@
 
 // tslint:disable:no-unused-expression
 
+/*
 const { expect } = require('chai');
 // import { functionToTest } from "./moduleToTest";
 
@@ -26,5 +27,5 @@ describe('module to test => function to test', () => {
 	// ... more tests => it
 
 });
-
+*/
 // ... more test suites => describe
