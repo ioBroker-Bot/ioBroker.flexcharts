@@ -41,7 +41,7 @@ This adapter uses a different approach. It brings the complete feature set of [A
 ```
 
 flexchart adapter will then show this chart:
-![eChart1](chart1.png)
+![flexcharts_stacked1](https://github.com/user-attachments/assets/7cf6dfab-ddad-4b2f-a1e1-20fa4b876b4c)
 
 Typically you will use Blockly or javascript to create and update content of this state.
 
