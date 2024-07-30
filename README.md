@@ -45,7 +45,7 @@ flexchart adapter will then show this chart:
 
 Typically you will use Blockly or javascript to create and update content of this state.
 
-There is another possibility to directly hand over eCharts-data via recall function within javascript. For details see below.
+There is another possibility to directly hand over eCharts-data via callback function within javascript. For details see below.
 
 # Getting started
 
@@ -61,11 +61,13 @@ Now add an instance in ioBroker GUI. The only configuration parameter of the ada
 
 Wenn adapter is running you can access it via http://localhost:8200/echarts.html (replace `localhost` by address of your ioBroker server).
 
-You may use this address in iFrame widgets of vis or jarvis or other visualizations. Of course you can also use directily in a browser tab.
+You may use this address in iFrame widgets of vis or jarvis or other visualizations. Of course you can also use it directly in a browser tab.
 
 To make it work, you have to provide additional parameters to tell the adapter about the source of data. Two options are availabe:
 * `source=state` => You provide chart data in an ioBroker state (json)
 * `source=script` => You provide chart data via a script (javascript or blockly)
+
+There is a built-in demo chart available: http://localhost:8200/echarts.html?source=state&id=flexcharts.0.info.chart1
 
 ### Use ioBroker state as source for an echart
 
@@ -80,9 +82,9 @@ Flexcharts will evaluate state `0_userdata.0.echarts.chart1` as data for eChart.
 
 ### Use javascript as source for an echart
 
-This is a bit more complicated but much more efficient. You provide the charts data directly by your JS or Blocky script which is dynamically called by Flexcharts adapter.
+This is a bit more complicated but much more efficient. You provide the charts data directly by your JS script which is dynamically called by flexcharts adapter.
 
-Again it's best to explain using an example. Create a script with this content (name of script does'nt matter):
+Again it's best to explain using an example. Create a script with this content (only first JS instance (**javascript.0**) is supported, name of script doesn't matter):
 ```
 onMessage('flexcharts', (data, callback) => {
     console.log(`data = ${JSON.stringify(data)}`);
@@ -113,7 +115,7 @@ function chart1(callback) {
 }
 ```
 
-Start the script and access this in a browser: `http://localhost:8200/echarts.html?source=script`
+Start the script and access this address in a browser: `http://localhost:8200/echarts.html?source=script`
 
 <!--
 Would this be better to read:
@@ -128,7 +130,7 @@ Additional paramters can be forwarded to the script and will be available within
 
 This should give a log entry in the example script: `data = {"source":"script","chart":"chart1","params":"{\"period\":\"daily\"}"}`
 
-I'm working on a more elaborated javascript template to simplify usage of the adaptert. Stay tuned.
+I'm working on a more elaborated javascript template to simplify usage of the adapter. Stay tuned.
 
 ## Changelog
 <!--
