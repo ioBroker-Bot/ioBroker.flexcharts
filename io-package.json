@@ -1,124 +1,136 @@
 {
-	"common": {
-		"name": "flexcharts",
-		"version": "0.0.1",
-		"news": {
-			"0.0.1": {
-				"en": "initial release",
-				"de": "Erstveröffentlichung",
-				"ru": "Начальная версия",
-				"pt": "lançamento inicial",
-				"nl": "Eerste uitgave",
-				"fr": "Première version",
-				"it": "Versione iniziale",
-				"es": "Versión inicial",
-				"pl": "Pierwsze wydanie",
-				"zh-cn": "首次出版"
-			}
-		},
-		"title": "Fully featured eCharts",
-		"titleLang": {
-			"en": "Fully featured eCharts",
-			"de": "Fully featured eCharts",
-			"ru": "Fully featured eCharts",
-			"pt": "Fully featured eCharts",
-			"nl": "Fully featured eCharts",
-			"fr": "Fully featured eCharts",
-			"it": "Fully featured eCharts",
-			"es": "Fully featured eCharts",
-			"pl": "Fully featured eCharts",
-			"zh-cn": "Fully featured eCharts"
-		},
-		"desc": {
-			"en": "Use all available features of eCharts within ioBroker",
-			"de": "Use all available features of eCharts within ioBroker",
-			"ru": "Use all available features of eCharts within ioBroker",
-			"pt": "Use all available features of eCharts within ioBroker",
-			"nl": "Use all available features of eCharts within ioBroker",
-			"fr": "Use all available features of eCharts within ioBroker",
-			"it": "Use all available features of eCharts within ioBroker",
-			"es": "Use all available features of eCharts within ioBroker",
-			"pl": "Use all available features of eCharts within ioBroker",
-			"zh-cn": "Use all available features of eCharts within ioBroker"
-		},
-		"authors": [
-			"MyHomeMyData <juergen.bonfert@gmail.com>"
-		],
-		"keywords": [
-			"chart",
-			"charts",
-			"echarts"
-		],
-		"license": "MIT",
-		"platform": "Javascript/Node.js",
-		"main": "main.js",
-		"icon": "flexcharts-icon.png",
-		"enabled": true,
-		"extIcon": "https://raw.githubusercontent.com/MyHomeMyData/ioBroker.flexcharts/main/admin/flexcharts-icon.png",
-		"readme": "https://github.com/MyHomeMyData/ioBroker.flexcharts/blob/main/README.md",
-		"loglevel": "info",
-		"mode": "daemon",
+    "common": {
+        "name": "flexcharts",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版",
+                "uk": "початковий випуск"
+            }
+        },
+        "title": "Fully featured eCharts",
+        "titleLang": {
+            "en": "Fully featured eCharts",
+            "de": "Alle Möglichkeiten von eCharts nutzen",
+            "ru": "Полностью представлен eCharts",
+            "pt": "ECharts totalmente caracterizados",
+            "nl": "Volledig uitgeruste eCharts",
+            "fr": "EChartes entièrement présentées",
+            "it": "Fully eCharts",
+            "es": "Fully eCharts",
+            "pl": "W pełni wyposażone eCharts",
+            "uk": "Повністю показані eCharts",
+            "zh-cn": "完整功能图"
+          },
+        "desc": {
+            "en": "Use all available features of Apache eCharts within ioBroker",
+            "de": "Verwenden Sie alle verfügbaren Funktionen von Apache eCharts innerhalb von ioBroker",
+            "ru": "Используйте все доступные функции Apache eCharts в ioBroker",
+            "pt": "Use todas as características disponíveis de Apache eCharts dentro ioBroker",
+            "nl": "Gebruik alle beschikbare functies van Apache eCharts binnen ioBroker",
+            "fr": "Utilisez toutes les fonctionnalités disponibles de Apache eCharts dans ioBroker",
+            "it": "Utilizzare tutte le funzionalità disponibili di eCharts Apache all'interno ioBroker",
+            "es": "Utilice todas las características disponibles de Apache eCharts dentro de ioBroker",
+            "pl": "Użyj wszystkich dostępnych funkcji eCharts Apache w jOBroker",
+            "uk": "Використовуйте всі доступні функції Apache eCharts в ioBroker",
+            "zh-cn": "使用 ioBroker 内 Apache 电子图的所有可用特性"
+          },
+        "authors": [
+            "MyHomeMyData <juergen.bonfert@gmail.com>"
+        ],
+        "keywords": [
+            "chart",
+            "charts",
+            "echarts"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "flexcharts-icon.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/MyHomeMyData/ioBroker.flexcharts/main/admin/flexcharts-icon.png",
+        "readme": "https://github.com/MyHomeMyData/ioBroker.flexcharts/blob/main/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
         "messagebox": true,
         "subscribe": "messagebox",
- 		"type": "visualization-widgets",
-		"compact": true,
-		"connectionType": "local",
-		"dataSource": "assumption",
-		"adminUI": {
-			"config": "json"
-		},
-		"dependencies": [
-			{
-				"js-controller": ">=3.3.22"
-			}
-		],
-		"globalDependencies": [
-			{
-				"admin": ">=5.1.13"
-			}
-		]
-	},
-	"native": {
-		"port": "8200"
-	},
-	"objects": [],
-	"instanceObjects": [
-		{
-			"_id": "info",
-			"type": "channel",
-			"common": {
-				"name": "Information"
-			},
-			"native": {}
-		},
-		{
-			"_id": "info.connection",
-			"type": "state",
-			"common": {
-				"role": "indicator.connected",
-				"name": "Device or service connected",
-				"type": "boolean",
-				"read": true,
-				"write": false,
-				"def": false
-			},
-			"native": {}
-		},
-		{
-			"_id": "info.chart1",
-			"type": "state",
-			"common": {
-			  "role": "state",
-			  "name": {
-				"en": "Demo chart 1",
-				"de": "Demo chart 1"
-			  },
-			  "type": "json",
-			  "read": true,
-			  "write": true,
-			  "def": "{\"series\":[{\"type\":\"gauge\",\"startAngle\":90,\"endAngle\":-270,\"pointer\":{\"show\":false},\"progress\":{\"show\":true,\"overlap\":false,\"roundCap\":true,\"clip\":false,\"itemStyle\":{\"borderWidth\":1,\"borderColor\":\"#464646\"}},\"axisLine\":{\"lineStyle\":{\"width\":40}},\"splitLine\":{\"show\":false,\"distance\":0,\"length\":10},\"axisTick\":{\"show\":false},\"axisLabel\":{\"show\":false,\"distance\":50},\"data\":[{\"value\":20,\"name\":\"Perfect\",\"title\":{\"offsetCenter\":[\"0%\",\"-30%\"]},\"detail\":{\"valueAnimation\":true,\"offsetCenter\":[\"0%\",\"-20%\"]}},{\"value\":40,\"name\":\"Good\",\"title\":{\"offsetCenter\":[\"0%\",\"0%\"]},\"detail\":{\"valueAnimation\":true,\"offsetCenter\":[\"0%\",\"10%\"]}},{\"value\":60,\"name\":\"Commonly\",\"title\":{\"offsetCenter\":[\"0%\",\"30%\"]},\"detail\":{\"valueAnimation\":true,\"offsetCenter\":[\"0%\",\"40%\"]}}],\"title\":{\"text\":\"Demo Chart: Gauge\",\"fontSize\":14},\"detail\":{\"width\":50,\"height\":14,\"fontSize\":14,\"color\":\"inherit\",\"borderColor\":\"inherit\",\"borderRadius\":20,\"borderWidth\":1,\"formatter\":\"{value}%\"}}]}"
-			},
-			"native": {}
-		  }
-		  ]
+        "type": "visualization-widgets",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "assumption",
+        "adminUI": {
+            "config": "json"
+        },
+        "dependencies": [
+            {
+                "js-controller": ">=3.3.22"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=5.1.13"
+            }
+        ]
+    },
+    "native": {
+        "port": "8200"
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.chart1",
+            "type": "state",
+            "common": {
+                "role": "state",
+                "name": {
+                    "en": "Demo chart 1",
+                    "de": "Demo-Chart 1",
+                    "ru": "Диаграмма 1",
+                    "pt": "Gráfico de demonstração 1",
+                    "nl": "Demokaart 1",
+                    "fr": "Tableau de démonstration 1",
+                    "it": "Grafico demo 1",
+                    "es": "Gráfico 1",
+                    "pl": "Wykres 1",
+                    "uk": "Демо схема 1",
+                    "zh-cn": "演示图1"
+                  },
+                "type": "json",
+                "read": true,
+                "write": true,
+                "def": "{\"series\":[{\"type\":\"gauge\",\"startAngle\":90,\"endAngle\":-270,\"pointer\":{\"show\":false},\"progress\":{\"show\":true,\"overlap\":false,\"roundCap\":true,\"clip\":false,\"itemStyle\":{\"borderWidth\":1,\"borderColor\":\"#464646\"}},\"axisLine\":{\"lineStyle\":{\"width\":40}},\"splitLine\":{\"show\":false,\"distance\":0,\"length\":10},\"axisTick\":{\"show\":false},\"axisLabel\":{\"show\":false,\"distance\":50},\"data\":[{\"value\":20,\"name\":\"Perfect\",\"title\":{\"offsetCenter\":[\"0%\",\"-30%\"]},\"detail\":{\"valueAnimation\":true,\"offsetCenter\":[\"0%\",\"-20%\"]}},{\"value\":40,\"name\":\"Good\",\"title\":{\"offsetCenter\":[\"0%\",\"0%\"]},\"detail\":{\"valueAnimation\":true,\"offsetCenter\":[\"0%\",\"10%\"]}},{\"value\":60,\"name\":\"Commonly\",\"title\":{\"offsetCenter\":[\"0%\",\"30%\"]},\"detail\":{\"valueAnimation\":true,\"offsetCenter\":[\"0%\",\"40%\"]}}],\"title\":{\"text\":\"Demo Chart: Gauge\",\"fontSize\":14},\"detail\":{\"width\":50,\"height\":14,\"fontSize\":14,\"color\":\"inherit\",\"borderColor\":\"inherit\",\"borderRadius\":20,\"borderWidth\":1,\"formatter\":\"{value}%\"}}]}"
+            },
+            "native": {}
+        }
+    ]
 }
