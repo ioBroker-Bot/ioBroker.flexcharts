@@ -9,6 +9,8 @@
   "homepage": "https://github.com/MyHomeMyData/ioBroker.flexcharts",
   "license": "MIT",
   "keywords": [
+    "ioBroker",
+    "visualization",
     "chart",
     "charts",
     "echarts"
