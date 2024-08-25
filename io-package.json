@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "news": {
+      "0.0.3": {
+        "en": "Disabled sinon should interface\nUpdate of npm dependencies",
+        "de": "sinon should interface deaktiviert\nAktualisierung von npm Abhängigkeiten",
+        "ru": "Отключенный Синон должен\nОбновление зависимостей npm",
+        "pt": "Sinon desabilitado deve interface\nAtualização de dependências npm",
+        "nl": "Uitgeschakelde sinon moet interface\nBijwerken van npm afhankelijkheden",
+        "fr": "Sinon désactivé devrait interfacer\nMise à jour des dépendances de npm",
+        "it": "Disabili sinon dovrebbe interfacciarsi\nAggiornamento delle dipendenze npm",
+        "es": "Impedido sinon debe interfaz\nActualización de las dependencias npm",
+        "pl": "Wyłączony sinon powinien mieć interfejs\nAktualizacja zależności npm",
+        "uk": "Вимкнений синон повинен інтерфейс\nОновлення залежності npm",
+        "zh-cn": "已禁用的西农应接口\nNpm 依赖关系的更新"
+      },
       "0.0.2": {
         "en": "initial release on npm",
         "de": "Erstveröffentlichung auf npm",

@@ -137,7 +137,7 @@ I'm working on a more elaborated javascript template to simplify usage of the ad
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.0.3 (2024-08-25)
 * (MyHomeMyData) Disabled sinon should interface
 * (MyHomeMyData) Update of npm dependencies
 
