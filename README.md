@@ -130,7 +130,9 @@ Additional paramters can be forwarded to the script and will be available within
 
 This should give a log entry in the example script: `data = {"source":"script","chart":"chart1","params":"{\"period\":\"daily\"}"}`
 
-I'm working on a more elaborated javascript template to simplify usage of the adapter. Stay tuned.
+I'm working on more elaborated javascript templates to simplify usage of the adapter. A [first template](templates/flexchartsTemplate1.js) is available, see folder templates.
+A very specific use case is available for Viessmann devices of E3 series, e.g. heat pump Vitocal 250. Refer to https://github.com/MyHomeMyData/ioBroker.e3oncan/discussions/35
+More to come. Stay tuned.
 
 ## Changelog
 <!--
