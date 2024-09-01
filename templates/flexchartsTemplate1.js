@@ -16,8 +16,8 @@
    * edit const option to configure the chart 
 
    Use following http addresses in browser or iFrame:
-   Chart of daily values starting 14 days before:  https://localhost:8200/echarts.html?message=flexchartsdemo&source=script&chart=demoChart&params={"period":"daily", "start":14}
-   Adapt 'localhost' and '8200' according to your needs
+   Chart of daily values starting 14 days before:  https://localhost:3100/echarts.html?message=flexchartsdemo&source=script&chart=demoChart&params={"period":"daily", "start":14}
+   Adapt 'localhost' and '3100' according to your needs
    Implemented periods: "daily", "monthly", "yearly"
 */
 

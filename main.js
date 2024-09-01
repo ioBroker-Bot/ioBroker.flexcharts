@@ -185,11 +185,16 @@ class Flexcharts extends utils.Adapter {
 		});
 
 		// Start server
-		this.webServer.listen({port: this.config.port}, () => {
-			this.log.info(`Server started on localhost:${this.config.port}`);
-			this.setState('info.connection', true, true);
-		});
-	}
+		try {
+			this.webServer.listen({port: this.config.port}, () => {
+				this.log.info(`Server started on localhost:${this.config.port}`);
+				this.setState('info.connection', true, true);
+			});
+		} catch (e) {
+			this.log.error(`Start of http server failed on localhost:${this.config.port} - err=${e.message}`);
+			this.setState('info.connection', false, true);
+		}
+}
 
 	demoChartGauge(callback) {
 		  const option = {

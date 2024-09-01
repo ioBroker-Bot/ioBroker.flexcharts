@@ -96,7 +96,7 @@
     ]
   },
   "native": {
-    "port": "8200"
+    "port": "3100"
   },
   "objects": [],
   "instanceObjects": [
