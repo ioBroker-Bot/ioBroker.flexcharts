@@ -144,7 +144,7 @@ More to come. Stay tuned.
 -->
 ### **WORK IN PROGRESS**
 * (MyHomeMyData) Changed default port to 3100 to avoid conflict with camera adapter
-* (MyHomeMyData) Check for conflicting port usage during start of instance (not working yet)
+* (MyHomeMyData) Check for conflicting port usage during start of instance
 
 ### 0.0.3 (2024-08-25)
 * (MyHomeMyData) Disabled sinon should interface
