@@ -45,14 +45,11 @@ class Flexcharts extends utils.Adapter {
 		// Reset the connection indicator during startup
 		this.setState('info.connection', false, true);
 
-		// The adapters config (in the instance object everything under the attribute "native") is accessible via
-		// this.config:
-		this.log.info('config port: ' + this.config.port);
-
-		this.startWebServer();
+		this.startWebServer(await this.getPortAsync(Number(this.config.port)));
 	}
 
-	async startWebServer(adapter) {
+	startWebServer(available_port) {
+		// available_port: Next available port number
 		this.log.debug(`Starting web server on http://localhost:${this.config.port}/`);
 
 		// Tools to select MIME-type based on file extension
@@ -185,8 +182,7 @@ class Flexcharts extends utils.Adapter {
 		});
 
 		// Start server
-		const check_port = await this.getPortAsync(Number(this.config.port));	// Returns next available port number
-		if (check_port == Number(this.config.port)) {
+		if (available_port == Number(this.config.port)) {
 			// Requested port is available
 			this.webServer.listen({port: this.config.port}, () => {
 				this.log.info(`Server started on localhost:${this.config.port}`);
@@ -194,7 +190,7 @@ class Flexcharts extends utils.Adapter {
 			});
 		} else {
 			// Error: Requested port is already in use.
-			this.log.error(`Start of http server failed on localhost:${this.config.port}. Port is already in use. Next available port is ${check_port}. Pls. change port in configuration of instance.`);
+			this.log.error(`Start of http server failed on localhost:${this.config.port}. Port is already in use. Next available port is ${available_port}. Pls. change port in configuration of instance.`);
 			this.setState('info.connection', false, true);
 		}
 }
