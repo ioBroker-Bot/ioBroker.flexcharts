@@ -30,7 +30,6 @@
         "zh-cn": "初步释放"
       }
     },
-    "title": "Fully featured eCharts",
     "titleLang": {
       "en": "Fully featured eCharts",
       "de": "Alle Möglichkeiten von eCharts nutzen",
@@ -61,15 +60,16 @@
       "MyHomeMyData <juergen.bonfert@gmail.com>"
     ],
     "keywords": [
-      "ioBroker",
       "visualization",
       "chart",
       "charts",
       "echarts"
     ],
-    "license": "MIT",
+    "licenseInformation": {
+      "license": "MIT",
+      "type": "free"
+    },
     "platform": "Javascript/Node.js",
-    "main": "main.js",
     "icon": "flexcharts-icon.png",
     "enabled": true,
     "extIcon": "https://raw.githubusercontent.com/MyHomeMyData/ioBroker.flexcharts/main/admin/flexcharts-icon.png",
@@ -78,6 +78,7 @@
     "mode": "daemon",
     "messagebox": true,
     "type": "visualization-widgets",
+    "tier": 3,
     "compact": true,
     "connectionType": "local",
     "dataSource": "assumption",

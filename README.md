@@ -15,7 +15,7 @@
 # Basic concept
 There are several adapters available to view charts within ioBroker. As far as I know, all of them are using a UI to configure content and options of the charts. Typically not all features of the used graphical sub system could be used in this way. E.g. it's not possible to view fully featured stacked charts with eChart-Adapter.
 
-This adapter uses a different approach. It brings the complete feature set of [Apache eCharts](https://echarts.apache.org/en/index.html) to ioBroker. Take a look the [demo charts](https://echarts.apache.org/examples/en/index.html).
+This adapter uses a different approach. It brings the complete feature set of [Apache ECharts](https://echarts.apache.org/en/index.html) to ioBroker. Take a look the [demo charts](https://echarts.apache.org/examples/en/index.html).
 
 **There is no UI to configure any chart.** You have to define the chart yourself, the adapter takes care about visualization. You have to provide definition and content of the chart by providing the content as a json-object - in eCharts examples it corresponds to the content of variable `option`. Here's an example to make it clear. To create a stacked chart you store it's definition in an ioBroker state (json format):
 
@@ -51,14 +51,6 @@ To be clear: This approach is not intended to be used to quickly create a simple
 But if you have a very specific idea in mind for a more complex chart, flexcharts offers the possibility to implement it.
 
 # Getting started
-
-### Install flexchart adapter
-
-Presently the adapter is availabe at Github only. Best way for installation is via command line interface:
-```
-iob url https://github.com/MyHomeMyData/ioBroker.flexcharts.git
-```
-Now add an instance in ioBroker GUI. The only configuration parameter of the adapter is the port number. You may use the default value of 3100 (used in examples shown here).
 
 ### Using the adapter
 
@@ -175,3 +167,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Additional remark:
+Source code of [Apache ECharts](https://echarts.apache.org/en/index.html) is used according to [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
