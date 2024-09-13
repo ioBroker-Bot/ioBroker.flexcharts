@@ -62,6 +62,8 @@
     "echarts.js.map",
     "echarts.js",
     "index.html",
+    "404.html",
+    "404.css",
     "favicon.ico"
   ],
   "scripts": {

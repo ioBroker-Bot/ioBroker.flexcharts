@@ -130,11 +130,13 @@ class Flexcharts extends utils.Adapter {
 												this.demoChart(result => {
 													res.writeHead(200, { 'Content-Type': contentType });
 													content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(result)));
+													if ('darkmode' in query) content = new Buffer(content.toString().replace("document.getElementById('main'),null,","document.getElementById('main'),'dark',"));
 													res.end(content, 'utf-8');
 												});
 											} else {
 												res.writeHead(200, { 'Content-Type': contentType });
 												content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(result)));
+												if ('darkmode' in query) content = new Buffer(content.toString().replace("document.getElementById('main'),null,","document.getElementById('main'),'dark',"));
 												res.end(content, 'utf-8');
 											}
 										}	
@@ -147,10 +149,12 @@ class Flexcharts extends utils.Adapter {
 												//this.log.debug(JSON.stringify(result.val));
 												res.writeHead(200, { 'Content-Type': contentType });
 												content = new Buffer(content.toString().replace('{ solution: 42 }',String(result.val)));
+												if ('darkmode' in query) content = new Buffer(content.toString().replace("document.getElementById('main'),null,","document.getElementById('main'),'dark',"));
 												res.end(content, 'utf-8');
 											} else {
 												res.writeHead(200, { 'Content-Type': contentType });
 												content = new Buffer('Could not read state id '+query.id);
+												if ('darkmode' in query) content = new Buffer(content.toString().replace("document.getElementById('main'),null,","document.getElementById('main'),'dark',"));
 												res.end(content, 'utf-8');
 											}
 										});
@@ -165,6 +169,7 @@ class Flexcharts extends utils.Adapter {
 							this.demoChartGauge(result => {
 								res.writeHead(200, { 'Content-Type': contentType });
 								content = new Buffer(content.toString().replace('{ solution: 42 }',JSON.stringify(result)));
+								if ('darkmode' in query) content = new Buffer(content.toString().replace("document.getElementById('main'),null,","document.getElementById('main'),'dark',"));
 								res.end(content, 'utf-8');
 							});
 						} else {
