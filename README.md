@@ -64,6 +64,8 @@ To make it work, you have to provide additional parameters to tell the adapter a
 
 There is a built-in demo chart available: http://localhost:3100/echarts.html?source=state&id=flexcharts.0.info.chart1
 
+To use dark mode of ECharts add `&darkmode`, e.g. http://localhost:3100/echarts.html?source=state&id=flexcharts.0.info.chart1&darkmode
+
 ### Use ioBroker state as source for an echart
 
 Example: `http://localhost:3100/echarts.html?source=state&id=0_userdata.0.echarts.chart1`
