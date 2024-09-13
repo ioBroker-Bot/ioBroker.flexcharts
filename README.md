@@ -134,7 +134,7 @@ More to come. Stay tuned.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.0.4 (2024-09-13)
 * (MyHomeMyData) Changed default port to 3100 to avoid conflict with camera adapter
 * (MyHomeMyData) Check for conflicting port usage during start of instance
 * (MyHomeMyData) Added option to select dark mode
