@@ -7,6 +7,7 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require('@iobroker/adapter-core');
+const adapterName = require('./package.json').name.split('.').pop();
 
 const http  = require('http');
 const url  = require('url');
@@ -40,7 +41,14 @@ class Flexcharts extends utils.Adapter {
 		// Reset the connection indicator during startup
 		this.setState('info.connection', false, true);
 
-		this.startWebServer(await this.getPortAsync(Number(this.config.port)));
+	    if (true) {
+			console.log('Adapter runs as a part of web service');
+			this.log.warn('Adapter runs as a part of web service');
+			this.setForeignState(`system.adapter.${this.namespace}.alive`, false, true, () =>
+				setTimeout(() => this.terminate ? this.terminate() : process.exit(), 1000));
+		} else {
+			this.startWebServer(await this.getPortAsync(Number(this.config.port)));
+		}
 	}
 
 	startWebServer(available_port) {
@@ -332,6 +340,7 @@ class Flexcharts extends utils.Adapter {
 	 */
 	onUnload(callback) {
 		try {
+			this.log.debug(`Unloading instance.`);
 			if (this.webServer) {
 				this.webServer.removeAllListeners();
 				this.webServer.close();
