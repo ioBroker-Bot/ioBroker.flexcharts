@@ -58,14 +58,7 @@
     "www/",
     "io-package.json",
     "LICENSE",
-    "main.js",
-    "echarts.html",
-    "echarts.js.map",
-    "echarts.js",
-    "index.html",
-    "404.html",
-    "404.css",
-    "favicon.ico"
+    "main.js"
   ],
   "scripts": {
     "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",

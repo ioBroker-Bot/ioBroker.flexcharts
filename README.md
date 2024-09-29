@@ -54,7 +54,9 @@ But if you have a very specific idea in mind for a more complex chart, flexchart
 
 ### Using the adapter
 
-Wenn adapter is running you can access it via http://localhost:3100/echarts.html (replace `localhost` by address of your ioBroker server).
+This adapter brings it's functionality as a web extension. Therefore it is mandatory to have installed and running the web adapter (`web.0`). It's assumed you're using the standard port 8082 for web adapter.
+
+Wenn flexcharts adapter is active you can access it via http://localhost:8082/echarts.html (replace `localhost` by address of your ioBroker server).
 
 You may use this address in iFrame widgets of vis or jarvis or other visualizations. Of course you can also use it directly in a browser tab.
 
@@ -62,17 +64,17 @@ To make it work, you have to provide additional parameters to tell the adapter a
 * `source=state` => You provide chart data in an ioBroker state (json)
 * `source=script` => You provide chart data via a script (javascript or blockly)
 
-There is a built-in demo chart available: http://localhost:3100/echarts.html?source=state&id=flexcharts.0.info.chart1
+There is a built-in demo chart available: http://localhost:8082/echarts.html?source=state&id=flexcharts.0.info.chart1
 
-To use dark mode of ECharts add `&darkmode`, e.g. http://localhost:3100/echarts.html?source=state&id=flexcharts.0.info.chart1&darkmode
+To use dark mode of ECharts add `&darkmode`, e.g. http://localhost:8082/echarts.html?source=state&id=flexcharts.0.info.chart1&darkmode
 
 ### Use ioBroker state as source for an echart
 
-Example: `http://localhost:3100/echarts.html?source=state&id=0_userdata.0.echarts.chart1`
+Example: `http://localhost:8082/echarts.html?source=state&id=0_userdata.0.echarts.chart1`
 
 <!--
 Would this be better to read:
-Example: http://localhost:3100/echarts.html?<mark style="background-color: #ffff00">source=state</mark>&<mark style="background-color: #00c000">&id=0_userdata.0.echarts.chart1</mark>
+Example: http://localhost:8082/echarts.html?<mark style="background-color: #ffff00">source=state</mark>&<mark style="background-color: #00c000">&id=0_userdata.0.echarts.chart1</mark>
 -->
 
 Flexcharts will evaluate state `0_userdata.0.echarts.chart1` as data for eChart. Try it: Create such a state and copy json data of example shown above (`{ "tooltip": { ...`) as state content, then access given address with a browser.
@@ -112,18 +114,18 @@ function chart1(callback) {
 }
 ```
 
-Start the script and access this address in a browser: `http://localhost:3100/echarts.html?source=script`
+Start the script and access this address in a browser: `http://localhost:8082/echarts.html?source=script`
 
 <!--
 Would this be better to read:
-Start the script and access this in a browser: http://localhost:3100/echarts.html?<mark style="background-color: #ffff00">source=script</mark>
+Start the script and access this in a browser: http://localhost:8082/echarts.html?<mark style="background-color: #ffff00">source=script</mark>
 -->
 
 Same chart should show up as in previous example.
 
-Pls. note, **you have to use the `onMessage()` functionality to receive the trigger from the adapter**. Default vaule for the message is `flexcharts` as shown in example above. You may use different messages by providing an additional parameter, e.g. to uses message `mycharts` add `&message=mycharts` to http address: `http://localhost:3100/echarts.html?source=script&message=mycharts`
+Pls. note, **you have to use the `onMessage()` functionality to receive the trigger from the adapter**. Default vaule for the message is `flexcharts` as shown in example above. You may use different messages by providing an additional parameter, e.g. to uses message `mycharts` add `&message=mycharts` to http address: `http://localhost:8082/echarts.html?source=script&message=mycharts`
 
-Additional paramters can be forwarded to the script and will be available within the script in variable `data`. Try following command: `http://localhost:3100/echarts.html?source=script&chart=chart1&params={"period":"daily"}`
+Additional paramters can be forwarded to the script and will be available within the script in variable `data`. Try following command: `http://localhost:8082/echarts.html?source=script&chart=chart1&params={"period":"daily"}`
 
 This should give a log entry in the example script: `data = {"source":"script","chart":"chart1","params":"{\"period\":\"daily\"}"}`
 
@@ -136,6 +138,9 @@ More to come. Stay tuned.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (MyHomeMyData) Use web extension instead of creating own web server.
+
 ### 0.0.4 (2024-09-13)
 * (MyHomeMyData) Changed default port to 3100 to avoid conflict with camera adapter
 * (MyHomeMyData) Check for conflicting port usage during start of instance
