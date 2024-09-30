@@ -9,14 +9,6 @@
 const utils = require('@iobroker/adapter-core');
 const adapterName = require('./package.json').name.split('.').pop();
 
-const http  = require('http');
-const url  = require('url');
-const fs = require('fs');
-const path = require('path');
-
-// Load your modules here, e.g.:
-// const fs = require("fs");
-
 class Flexcharts extends utils.Adapter {
 
 	/**
@@ -27,8 +19,6 @@ class Flexcharts extends utils.Adapter {
 			...options,
 			name: 'flexcharts',
 		});
-
-		this.webServer = null;
 
 		this.on('ready', this.onReady.bind(this));
 		this.on('unload', this.onUnload.bind(this));
@@ -42,7 +32,7 @@ class Flexcharts extends utils.Adapter {
 		this.setState('info.connection', false, true);
 
 		console.log('Adapter runs as a part of web service');
-		this.log.warn('Adapter runs as a part of web service');
+		this.log.warn('Adapter runs as a part of web service. Adapter instance will stay inactive.');
 		this.setForeignState(`system.adapter.${this.namespace}.alive`, false, true, () =>
 			setTimeout(() => this.terminate ? this.terminate() : process.exit(), 1000));
 	}
@@ -54,16 +44,6 @@ class Flexcharts extends utils.Adapter {
 	onUnload(callback) {
 		try {
 			this.log.debug(`Unloading instance.`);
-			if (this.webServer) {
-				this.webServer.removeAllListeners();
-				this.webServer.close();
-			}
-			// Here you must clear all timeouts or intervals that may still be active
-			// clearTimeout(timeout1);
-			// clearTimeout(timeout2);
-			// ...
-			// clearInterval(interval1);
-
 			callback();
 		} catch (e) {
 			callback();
