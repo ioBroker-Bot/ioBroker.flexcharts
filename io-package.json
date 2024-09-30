@@ -84,11 +84,13 @@
     },
     "platform": "Javascript/Node.js",
     "icon": "flexcharts-icon.png",
+    "webExtension": "lib/web.js",
+    "onlyWWW": true,
     "enabled": true,
     "extIcon": "https://raw.githubusercontent.com/MyHomeMyData/ioBroker.flexcharts/main/admin/flexcharts-icon.png",
     "readme": "https://github.com/MyHomeMyData/ioBroker.flexcharts/blob/main/README.md",
-    "loglevel": "info",
-    "mode": "daemon",
+    "loglevel": "debug",
+    "mode": "extension",
     "messagebox": true,
     "type": "visualization-widgets",
     "tier": 3,
@@ -110,7 +112,7 @@
     ]
   },
   "native": {
-    "port": "3100"
+    "webInstance": "*"
   },
   "objects": [],
   "instanceObjects": [

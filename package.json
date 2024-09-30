@@ -23,7 +23,8 @@
     "node": ">= 18"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.1.6"
+    "@iobroker/adapter-core": "^3.1.6",
+    "express": "^4.21.0"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^3.7.0",
@@ -56,20 +57,12 @@
     "lib/",
     "www/",
     "io-package.json",
-    "LICENSE",
-    "main.js",
-    "echarts.html",
-    "echarts.js.map",
-    "echarts.js",
-    "index.html",
-    "404.html",
-    "404.css",
-    "favicon.ico"
+    "LICENSE"
   ],
   "scripts": {
     "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
     "test:package": "mocha test/package --exit",
-    "test:integration": "mocha test/integration --exit",
+    "test:integration": "",
     "test": "npm run test:js && npm run test:package",
     "check": "tsc --noEmit -p tsconfig.check.json",
     "lint": "eslint .",

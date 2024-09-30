@@ -1,4 +1,6 @@
 {
     "flexcharts adapter settings": "Impostazioni dell'adattatore per flexcharts",
-    "port": "port"
+    "port": "port",
+    "There is nothing to configure. Adapter runs as web extension of web adapter.": "Non c'è niente da configurare. L'adattatore viene eseguito come estensione Web dell'adattatore Web.",
+    "Please make sure you have running an instance of web adapter (web.0)": "Assicurati di avere in esecuzione un'istanza dell'adattatore web (web.0)"
 }
