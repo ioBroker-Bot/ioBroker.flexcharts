@@ -34,7 +34,7 @@ class Flexcharts extends utils.Adapter {
 		console.log('Adapter runs as a part of web service');
 		this.log.warn('Adapter runs as a part of web service. Adapter instance will stay inactive.');
 		this.setForeignState(`system.adapter.${this.namespace}.alive`, false, true, () =>
-			setTimeout(() => this.terminate ? this.terminate() : process.exit(), 1000));
+			setTimeout(() => this.terminate ? this.terminate() : process.exit(utils.EXIT_CODES.ADAPTER_REQUESTED_TERMINATION), 1000));
 	}
 
 	/**
