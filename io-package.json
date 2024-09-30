@@ -111,7 +111,6 @@
     ]
   },
   "native": {
-    "port": "3100",
     "webInstance": "*"
   },
   "objects": [],
