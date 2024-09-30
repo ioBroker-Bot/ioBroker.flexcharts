@@ -2,6 +2,6 @@
 // See "Globally ignoring files with ignores" at https://eslint.org/docs/latest/use/configure/configuration-files
 export default [
     {
-        ignores: ["**/.eslintrc.js", "admin/words.js", "echarts.js"]
+        ignores: ["**/.eslintrc.js", "admin/words.js", "www/echarts.js"]
     }
 ];
