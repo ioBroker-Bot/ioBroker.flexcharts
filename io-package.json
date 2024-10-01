@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "news": {
+      "0.1.2": {
+        "en": "Adapted adapter configurations",
+        "de": "Adapterkonfigurationen angepasst",
+        "ru": "Адаптированные конфигурации адаптера",
+        "pt": "Configurações do adaptador adaptado",
+        "nl": "Aangepaste adapterconfiguraties",
+        "fr": "Configurations d'adaptateurs adaptées",
+        "it": "Configurazioni adattatori",
+        "es": "Configuraciones adaptadoras",
+        "pl": "Konfiguracje adaptera",
+        "uk": "Адаптивні конфігурації адаптера",
+        "zh-cn": "适应适配器配置"
+      },
       "0.1.1": {
         "en": "Removed main.js from package.json since it's obsolete",
         "de": "Eintrag main.js aus package.json entfernt, da es nicht mehr benötigt wird",
