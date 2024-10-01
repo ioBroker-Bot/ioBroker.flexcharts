@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "news": {
+      "0.1.1": {
+        "en": "Removed main.js from package.json since it's obsolete",
+        "de": "Eintrag main.js aus package.json entfernt, da es nicht mehr benötigt wird",
+        "ru": "Удалить основные.js из пакета. Джейсон, так как он устарел",
+        "pt": "Removido main.js do pacote. json desde que é obsoleto",
+        "nl": "Verwijderde main.js uit pakket. Json omdat het verouderd is",
+        "fr": "Supprimé main.js du paquet. Json depuis que c'est obsolète",
+        "it": "Rimuoveto main.js dal pacchetto. json da quando è obsoleto",
+        "es": "Retirado main.js del paquete. Json ya que es obsoleto",
+        "pl": "Usunięto main.js z pakietu. Json ponieważ jest przestarzały",
+        "uk": "Видалити основний.js з пакета. json так як це obsolete",
+        "zh-cn": "从软件包中删除主.js. Json 已经过时了"
+      },
       "0.1.0": {
         "en": "Use web extension instead of creating own web server. Use http://localhost:8082/flexcharts/echarts.html instead of http://localhost:3100/echarts.html",
         "de": "Adapter arbeitet als Web-Extension anstatt einen eigenen Webserver bereitzustellen. Verwenden Sie http://localhost:8082/flexcharts/echarts.html anstelle von http://localhost:3100/echarts.html",

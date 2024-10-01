@@ -138,7 +138,7 @@ More to come. Stay tuned.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.1.1 (2024-10-01)
 * (MyHomeMyData) Removed main.js from package.json since it's obsolete
 
 ### 0.1.0 (2024-10-01)
