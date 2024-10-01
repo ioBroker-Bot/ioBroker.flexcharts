@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.0.4",
+    "version": "0.1.0",
     "news": {
+      "0.1.0": {
+        "en": "Use web extension instead of creating own web server. Use http://localhost:8082/flexcharts/echarts.html instead of http://localhost:3100/echarts.html",
+        "de": "Adapter arbeitet als Web-Extension anstatt einen eigenen Webserver bereitzustellen. Verwenden Sie http://localhost:8082/flexcharts/echarts.html anstelle von http://localhost:3100/echarts.html",
+        "ru": "Используйте веб-расширение вместо создания собственного веб-сервера. http://localhost:8082/flexcharts/echarts.html вместо http://localhost:3100/echarts.html",
+        "pt": "Use a extensão web em vez de criar um servidor web próprio. Use http://localhost:8082/flexcharts/echarts.html em vez de http://localhost:3100/echarts.html",
+        "nl": "Gebruik webextensie in plaats van het maken van een eigen webserver. Gebruik http://localhost:8082/flexcharts/echarts.html in plaats van http://localhost:3100/echarts.html",
+        "fr": "Utilisez l'extension web au lieu de créer son propre serveur web. Utiliser http://localhost:8082/flexcharts/echarts.html au lieu de http://localhost:3100/echarts.html",
+        "it": "Utilizzare l'estensione web invece di creare il proprio server web. Utilizzare http://localhost:8082/flexcharts/echarts.html anziché http://localhost:3100/echarts.html",
+        "es": "Use extensión web en lugar de crear un servidor web propio. Use http://localhost:8082/flexcharts/echarts.html en lugar de http://localhost:3100/echarts.html",
+        "pl": "Użyj rozszerzenia sieci zamiast tworzenia własnego serwera. Użyj http: / / localhost: 8082 / flexcharts / echarts.html zamiast http: / / localhost: 3100 / echarts.html",
+        "uk": "Використовуйте розширення веб-сервера замість створення власного веб-сервера. Використовуйте http://localhost:8082/flexcharts/echarts.html замість http://localhost:3100/echarts.html",
+        "zh-cn": "使用网络扩展而不是创建自己的网络服务器. 使用http://localhost:8082/flexcharts/echarts.html 代替 http://localhost:3100/echarts.html 互联网档案馆的存檔,存档日期2013-09-02"
+      },
       "0.0.4": {
         "en": "Changed default port to 3100 to avoid conflict with camera adapter\nCheck for conflicting port usage during start of instance\nAdded option to select dark mode\nFixed missing 404-page",
         "de": "Standardport auf 3100 geändert, um Konflikte mit Kameraadapter zu vermeiden\nPrüfung auf Port-Konflikt ergänzt beim Start der Instanz\nOption hinzugefügt, um den Dark Mode auszuwählen\nFehler behoben bei 404-Seite",
