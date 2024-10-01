@@ -138,6 +138,9 @@ More to come. Stay tuned.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (MyHomeMyData) Adapted adapter configurations
+
 ### 0.1.1 (2024-10-01)
 * (MyHomeMyData) Removed main.js from package.json since it's obsolete
 
