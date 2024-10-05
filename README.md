@@ -17,6 +17,8 @@ There are several adapters available to view charts within ioBroker. As far as I
 
 This adapter uses a different approach. It brings the complete feature set of [Apache ECharts](https://echarts.apache.org/en/index.html) to ioBroker. Take a look the [demo charts](https://echarts.apache.org/examples/en/index.html).
 
+Remark: Adapter was not tested on MacOS, yet.
+
 **There is no UI to configure any chart.** You have to define the chart yourself, the adapter takes care about visualization. You have to provide definition and content of the chart by providing the content as a json-object - in eCharts examples it corresponds to the content of variable `option`. Here's an example to make it clear. To create a stacked chart you store it's definition in an ioBroker state (json format):
 
 ```
@@ -138,6 +140,9 @@ More to come. Stay tuned.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (MyHomeMyData) Fixed issue on windows systems (handling of file path)
+
 ### 0.1.2 (2024-10-01)
 * (MyHomeMyData) Adapted adapter configurations
 
