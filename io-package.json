@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "news": {
+      "0.1.3": {
+        "en": "Fixed issue on windows systems (handling of file path)",
+        "de": "Problem behoben bei Windows-Systemen (Handling des Dateipfads)",
+        "ru": "Исправленная проблема на системах Windows (руководство по пути файла)",
+        "pt": "Problema fixo em sistemas de janelas (manuseamento do caminho do arquivo)",
+        "nl": "Vast probleem op windows-systemen (afhandeling van bestandspad)",
+        "fr": "Problème corrigé sur les systèmes Windows (traitement du chemin de fichier)",
+        "it": "Problema fisso sui sistemi Windows (manuale del percorso file)",
+        "es": "Edición fija en sistemas de ventanas (manejo de la ruta del archivo)",
+        "pl": "Naprawiono problem w systemach Windows (obsługa ścieżki plików)",
+        "uk": "Виправлено проблему на вікнах системи (ручка шляху до файлу)",
+        "zh-cn": "窗口系统的固定发行( 文件路径处理)"
+      },
       "0.1.2": {
         "en": "Adapted adapter configurations",
         "de": "Adapterkonfigurationen angepasst",
