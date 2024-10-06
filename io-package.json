@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "news": {
+      "0.1.4": {
+        "en": "Fixes for issue #34\nFixes for issue #33",
+        "de": "Fehler behoben #34\nFehler behoben #33",
+        "ru": "#34\n#33",
+        "pt": "Correções para edição #34\nCorreções para problema #33",
+        "nl": "Fixes voor probleem #34\nFixes voor probleem #33",
+        "fr": "Corrections pour le numéro 34\nCorrections pour le numéro 33",
+        "it": "Correzioni per numero #34\nFissi per emissione #33",
+        "es": "Arreglos para el número #34\nArreglos para el número #33",
+        "pl": "Fixes for issue # 34\nFixes for issue # 33",
+        "uk": "Виправлення для випуску #34\nВиправлення для випуску #33",
+        "zh-cn": "第34期的修改\n修复第33期"
+      },
       "0.1.3": {
         "en": "Fixed issue on windows systems (handling of file path)",
         "de": "Problem behoben bei Windows-Systemen (Handling des Dateipfads)",
@@ -80,19 +93,6 @@
         "pl": "Wyłączony sinon powinien mieć interfejs\nAktualizacja zależności npm",
         "uk": "Вимкнений синон повинен інтерфейс\nОновлення залежності npm",
         "zh-cn": "已禁用的西农应接口\nNpm 依赖关系的更新"
-      },
-      "0.0.2": {
-        "en": "initial release on npm",
-        "de": "Erstveröffentlichung auf npm",
-        "ru": "первоначальный выпуск",
-        "pt": "lançamento inicial",
-        "nl": "eerste release",
-        "fr": "libération initiale",
-        "it": "rilascio iniziale",
-        "es": "liberación inicial",
-        "pl": "początkowe zwolnienie",
-        "uk": "початковий реліз",
-        "zh-cn": "初步释放"
       }
     },
     "titleLang": {
@@ -159,8 +159,7 @@
       }
     ],
     "globalDependencies": [
-      {
-      }
+      {}
     ]
   },
   "native": {
