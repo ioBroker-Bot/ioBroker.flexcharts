@@ -149,7 +149,6 @@
     "compact": true,
     "connectionType": "local",
     "dataSource": "assumption",
-    "noConfig": true,
     "adminUI": {
       "config": "none"
     },
