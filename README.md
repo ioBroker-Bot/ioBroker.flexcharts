@@ -140,6 +140,10 @@ More to come. Stay tuned.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (MyHomeMyData) Fixes for issue #34
+* (MyHomeMyData) Fixes for issue #33
+
 ### 0.1.3 (2024-10-05)
 * (MyHomeMyData) Fixed issue on windows systems (handling of file path)
 

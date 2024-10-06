@@ -150,16 +150,16 @@
     "connectionType": "local",
     "dataSource": "assumption",
     "adminUI": {
-      "config": "json"
+      "config": "none"
     },
     "dependencies": [
       {
-        "js-controller": ">=5.0.19"
+        "js-controller": ">=5.0.19",
+        "web": ">=2.0.0"
       }
     ],
     "globalDependencies": [
       {
-        "admin": ">=5.1.13"
       }
     ]
   },
@@ -173,19 +173,6 @@
       "type": "channel",
       "common": {
         "name": "Information"
-      },
-      "native": {}
-    },
-    {
-      "_id": "info.connection",
-      "type": "state",
-      "common": {
-        "role": "indicator.connected",
-        "name": "Device or service connected",
-        "type": "boolean",
-        "read": true,
-        "write": false,
-        "def": false
       },
       "native": {}
     },

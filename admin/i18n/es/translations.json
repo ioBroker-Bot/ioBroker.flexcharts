@@ -1,6 +1,0 @@
-{
-    "flexcharts adapter settings": "Ajustes del adaptador para flexcharts",
-    "port": "port",
-    "There is nothing to configure. Adapter runs as web extension of web adapter.": "No hay nada que configurar. El adaptador se ejecuta como una extensión web del adaptador web.",
-    "Please make sure you have running an instance of web adapter (web.0)": "Asegúrese de haber ejecutado una instancia de Web Adaptor (web.0)"
-}

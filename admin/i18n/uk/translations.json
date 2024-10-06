@@ -1,7 +1,0 @@
-{
-    "flexcharts adapter settings": "Параметри адаптера для гнучких діаграм",
-    "port": "порт",
-    "There is nothing to configure. Adapter runs as web extension of web adapter.": "Нема чого налаштовувати. Адаптер працює як веб-розширення веб-адаптера.",
-    "Please make sure you have running an instance of web adaper (web.0)": "Переконайтеся, що ви запустили екземпляр веб-адаперу (web.0)",
-    "Please make sure you have running an instance of web adapter (web.0)": "Переконайтеся, що ви запустили екземпляр веб-адаптера (web.0)"
-}

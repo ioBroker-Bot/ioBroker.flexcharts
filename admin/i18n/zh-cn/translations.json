@@ -1,7 +1,0 @@
-{
-    "flexcharts adapter settings": "flexcharts的适配器设置",
-    "port": "port",
-    "There is nothing to configure. Adapter runs as web extension of web adapter.": "没有什么可配置的。适配器作为 Web 适配器的 Web 扩展运行。",
-    "Please make sure you have running an instance of web adaper (web.0)": "请确保您正在运行 web adaper (web.0) 的实例",
-    "Please make sure you have running an instance of web adapter (web.0)": "请确保您正在运行 Web 适配器 (web.0) 的实例"
-}
