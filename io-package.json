@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "news": {
+      "0.1.5": {
+        "en": "Fixes for issue #36",
+        "de": "Fehler behoben #36",
+        "ru": "#36",
+        "pt": "Correções para edição #36",
+        "nl": "Fixes voor probleem #36",
+        "fr": "Corrections pour le numéro 36",
+        "it": "Correzioni per numero #36",
+        "es": "Arreglos para el número #36",
+        "pl": "Fixes for issue # 36",
+        "uk": "Виправлення для випуску #36",
+        "zh-cn": "修复第36期"
+      },
       "0.1.4": {
         "en": "Fixes for issue #34\nFixes for issue #33",
         "de": "Fehler behoben #34\nFehler behoben #33",
@@ -80,19 +93,6 @@
         "pl": "Zmieniono port domyślny na 3100, aby uniknąć konfliktu z adapterem kamery\nSprawdzić, czy podczas uruchamiania instancji nie dochodzi do sprzecznego użytkowania portu\nDodano opcję wyboru trybu ciemnego\nNaprawiono brakujące 404- strona",
         "uk": "Змінений порт за замовчуванням до 3100, щоб уникнути конфлікту з адаптером камери\nПеревірка використання портів при старті\nДодано варіант вибрати темний режим\nВиправлено відсутні 404-сторінки",
         "zh-cn": "默认端口改为3100, 以避免与相机适配器冲突\n在开始实例时检查相冲突的端口使用\n添加选择暗模式的选项\n固定缺失 404页"
-      },
-      "0.0.3": {
-        "en": "Disabled sinon should interface\nUpdate of npm dependencies",
-        "de": "sinon should interface deaktiviert\nAktualisierung von npm Abhängigkeiten",
-        "ru": "Отключенный Синон должен\nОбновление зависимостей npm",
-        "pt": "Sinon desabilitado deve interface\nAtualização de dependências npm",
-        "nl": "Uitgeschakelde sinon moet interface\nBijwerken van npm afhankelijkheden",
-        "fr": "Sinon désactivé devrait interfacer\nMise à jour des dépendances de npm",
-        "it": "Disabili sinon dovrebbe interfacciarsi\nAggiornamento delle dipendenze npm",
-        "es": "Impedido sinon debe interfaz\nActualización de las dependencias npm",
-        "pl": "Wyłączony sinon powinien mieć interfejs\nAktualizacja zależności npm",
-        "uk": "Вимкнений синон повинен інтерфейс\nОновлення залежності npm",
-        "zh-cn": "已禁用的西农应接口\nNpm 依赖关系的更新"
       }
     },
     "titleLang": {
