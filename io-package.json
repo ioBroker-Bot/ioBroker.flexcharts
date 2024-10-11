@@ -154,12 +154,11 @@
     },
     "dependencies": [
       {
-        "js-controller": ">=5.0.19",
+        "js-controller": ">=5.0.19"
+      },
+      {
         "web": ">=2.0.0"
       }
-    ],
-    "globalDependencies": [
-      {}
     ]
   },
   "native": {
