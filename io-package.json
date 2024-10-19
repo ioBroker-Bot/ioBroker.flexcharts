@@ -144,7 +144,7 @@
     "loglevel": "debug",
     "mode": "extension",
     "messagebox": true,
-    "type": "visualization-widgets",
+    "type": "visualization",
     "tier": 3,
     "compact": true,
     "connectionType": "local",
