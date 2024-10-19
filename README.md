@@ -140,7 +140,7 @@ More to come. Stay tuned.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.1.6 (2024-10-19)
 * (MyHomeMyData) Fix for issue #37
 
 ### 0.1.5 (2024-10-11)
