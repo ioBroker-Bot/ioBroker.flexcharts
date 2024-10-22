@@ -4,11 +4,11 @@
    Create eCharts based on adapter flexcharts using data of history adapter
   
    Preconditions:
-    * Adapter flexcharts is running (available via  "iob url https://github.com/MyHomeMyData/ioBroker.flexcharts")
+    * Adapter flexcharts (version 0.1.6 or newer) is running. Adaptewr is available via  beta repository of ioBroker.
     * This script is running on instance 0 of javascript adapter, i.e. on javascript.0
     * Historic data is organized in a daily, monthly or yearly manner, exact one data point per time period, respectively. Missing or multiple data per period may cause strange effects.
   
-   Uses Apaches ECharts: https://echarts.apache.org/en/index.html
+   Uses Apache ECharts: https://echarts.apache.org/en/index.html
 
    This is a temmplate. At least:
    * check const instanceHistory
@@ -16,12 +16,12 @@
    * edit const option to configure the chart 
 
    Use following http addresses in browser or iFrame:
-   Chart of daily values starting 14 days before:  https://localhost:3100/echarts.html?message=flexchartsdemo&source=script&chart=demoChart&params={"period":"daily", "start":14}
-   Adapt 'localhost' and '3100' according to your needs
+   Chart of daily values starting 14 days before:  http://localhost:8082/flexcharts/echarts.html?message=flexchartsdemo&source=script&chart=demoChart&params={"period":"daily", "start":14}
+   Adapt 'localhost' and '8082' according to your needs
    Implemented periods: "daily", "monthly", "yearly"
 */
 
-// 31.08.2024   MyHomeMyData
+// 22.10.2024   MyHomeMyData
 
 const instanceHistory = 'history.0';                // Instance of history adapter to be used
 
