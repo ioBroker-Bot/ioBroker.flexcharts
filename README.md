@@ -70,6 +70,8 @@ There is a built-in demo chart available: http://localhost:8082/flexcharts/echar
 
 To use dark mode of ECharts add `&darkmode`, e.g. http://localhost:8082/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart1&darkmode
 
+To enable a regulary refresh of chart use option `&refresh`, e.g. http://localhost:8082/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart1&refresh=15 to refresh chart ervery 15 seconds. Minumum value is 5 seconds. Defaults to 60 seconds.
+
 ### Use ioBroker state as source for an echart
 
 Example: `http://localhost:8082/flexcharts/echarts.html?source=state&id=0_userdata.0.echarts.chart1`
@@ -140,6 +142,12 @@ More to come. Stay tuned.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (MyHomeMyData) Fix for issue #41 (findings of repository checker)
+* (MyHomeMyData) Updated ECharts to version 5.5.1, see issue #40
+* (MyHomeMyData) Fix for issue #39 (html warnings)
+* (MyHomeMyData) Added option 'refresh' to enable auto update of chart
+
 ### 0.1.6 (2024-10-19)
 * (MyHomeMyData) Fix for issue #37
 
