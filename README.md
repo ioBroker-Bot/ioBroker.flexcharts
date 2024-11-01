@@ -143,6 +143,9 @@ More to come. Stay tuned.
 	### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
+* (MyHomeMyData) Fix for issue #41 (findings of repository checker)
+* (MyHomeMyData) Updated ECharts to version 5.5.1, see issue #40
+* (MyHomeMyData) Fix for issue #39 (html warnings)
 * (MyHomeMyData) Added option 'refresh' to enable auto update of chart
 
 ### 0.1.6 (2024-10-19)
