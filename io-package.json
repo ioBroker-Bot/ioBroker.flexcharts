@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.1.6",
+    "version": "0.2.0",
     "news": {
+      "0.2.0": {
+        "en": "Updated readme. Added sections Templates and Reference.\nFix for issue #41 (findings of repository checker)\nUpdated ECharts to version 5.5.1, see issue #40\nFix for issue #39 (html warnings)\nAdded option 'refresh' to enable auto update of chart",
+        "de": "Readme aktualisiert. Abschnitte Templates und Reference hinzugefügt.\nFix für Issue #41 (Ergebnisse des Repository-Checkers)\nECharts auf Version 5.5.1 aktualisiert, siehe Issue #40\nFix für Issue #39 (html Warnungen)\nOption 'refresh' hinzugefügt, um das automatische Update des Diagramms zu aktivieren",
+        "ru": "Обновлено. Добавлены разделы Templates and Reference.\nИсправление для выпуска #41 (поиск репозитории)\nОбновленный ECharts to version 5.5.1, см. issue #40\nFix for issue #39 (html warnings)\nДобавлена опция \"refresh\" для автоматического обновления диаграммы",
+        "pt": "Leitura actualizado. Seções adicionadas Modelos e Referência.\nCorrigir para a edição #41 (conjuntos de verificador de repositório)\nECharts atualizados para a versão 5.5.1, veja a edição #40\nFix for issue #39 (avisões HTML)\nAdicionado opção 'refresh' para ativar a atualização automática do gráfico",
+        "nl": "Bijgewerkt. Toegevoegd secties Sjablonen en Referentie.\nFix voor probleem #41 (bevindingen van repository checker)\nBijgewerkt ECharts naar versie 5.5.1, zie probleem #40\nFix voor probleem #39 (html waarschuwingen)\nToegevoegd optie 'vernieuwen' om automatisch bijwerken van grafiek mogelijk te maken",
+        "fr": "Récapitulatif actualisé. Sections ajoutées Modèles et références.\nCorrection pour le numéro 41 (recherches du vérificateur du dépôt)\nMise à jour d'ECharts vers la version 5.5.1, voir le numéro 40\nCorrection pour le numéro 39 (avertissements HTML)\nAjout de l'option « rafraîchir » pour activer la mise à jour automatique du graphique",
+        "it": "Aggiornato. Aggiunte sezioni Modelli e Riferimento.\nFissare per numero #41 (finanze di repository checker)\nAggiornato ECharts alla versione 5.5.1, vedi numero #40\nRisolvere per il numero #39 (avviso HTML)\nAggiunta opzione 'refresh' per abilitare l'aggiornamento automatico del grafico",
+        "es": "Leído actualizado. Secciones agregadas Plantillas y Referencia.\nFijación para el número #41 (finamientos de repositorio)\nActualizado ECharts a la versión 5.5.1, ver número #40\nCorrección para edición #39 (Advertencias HTML)\nOpción agregada 'refresh' para permitir la actualización automática del gráfico",
+        "pl": "Zaktualizowany readme. Dodano sekcje Szablony i referencje.\nFix for issue # 41 (wyniki weryfikacji repozytorium)\nAktualizacja ECharts do wersji 5.5.1, patrz numer # 40\nFix for issue # 39 (ostrzeżenia html)\nDodano opcję \"odśwież\", aby włączyć automatyczną aktualizację wykresu",
+        "uk": "Оновлене читке. Додано розділи Шаблони та посилання.\nВиправлення для випуску #41 (підписи репозиторійного чекера)\nОновлено ECharts до версії 5.5.1, див. питання #40\nВиправлення проблеми #39 (html попередження)\nДодано параметр 'refresh' для автоматичного оновлення діаграми",
+        "zh-cn": "更新的读数。 添加的章节模板和参考.\n为第41期(查找仓库检查器)进行修复\n最新ECharts至5.5.1版本,见问题40\n修复第39期( html 警告)\n添加“ 新鲜” 选项以启用图表的自动更新"
+      },
       "0.1.6": {
         "en": "Fix for issue #37",
         "de": "Problem behoben issue #37",
@@ -80,19 +93,6 @@
         "pl": "Usunięto main.js z pakietu. Json ponieważ jest przestarzały",
         "uk": "Видалити основний.js з пакета. json так як це obsolete",
         "zh-cn": "从软件包中删除主.js. Json 已经过时了"
-      },
-      "0.1.0": {
-        "en": "Use web extension instead of creating own web server. Use http://localhost:8082/flexcharts/echarts.html instead of http://localhost:3100/echarts.html",
-        "de": "Adapter arbeitet als Web-Extension anstatt einen eigenen Webserver bereitzustellen. Verwenden Sie http://localhost:8082/flexcharts/echarts.html anstelle von http://localhost:3100/echarts.html",
-        "ru": "Используйте веб-расширение вместо создания собственного веб-сервера. http://localhost:8082/flexcharts/echarts.html вместо http://localhost:3100/echarts.html",
-        "pt": "Use a extensão web em vez de criar um servidor web próprio. Use http://localhost:8082/flexcharts/echarts.html em vez de http://localhost:3100/echarts.html",
-        "nl": "Gebruik webextensie in plaats van het maken van een eigen webserver. Gebruik http://localhost:8082/flexcharts/echarts.html in plaats van http://localhost:3100/echarts.html",
-        "fr": "Utilisez l'extension web au lieu de créer son propre serveur web. Utiliser http://localhost:8082/flexcharts/echarts.html au lieu de http://localhost:3100/echarts.html",
-        "it": "Utilizzare l'estensione web invece di creare il proprio server web. Utilizzare http://localhost:8082/flexcharts/echarts.html anziché http://localhost:3100/echarts.html",
-        "es": "Use extensión web en lugar de crear un servidor web propio. Use http://localhost:8082/flexcharts/echarts.html en lugar de http://localhost:3100/echarts.html",
-        "pl": "Użyj rozszerzenia sieci zamiast tworzenia własnego serwera. Użyj http: / / localhost: 8082 / flexcharts / echarts.html zamiast http: / / localhost: 3100 / echarts.html",
-        "uk": "Використовуйте розширення веб-сервера замість створення власного веб-сервера. Використовуйте http://localhost:8082/flexcharts/echarts.html замість http://localhost:3100/echarts.html",
-        "zh-cn": "使用网络扩展而不是创建自己的网络服务器. 使用http://localhost:8082/flexcharts/echarts.html 代替 http://localhost:3100/echarts.html 互联网档案馆的存檔,存档日期2013-09-02"
       }
     },
     "titleLang": {

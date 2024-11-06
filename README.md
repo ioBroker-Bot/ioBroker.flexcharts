@@ -174,7 +174,7 @@ This should bring up a demo chart, when flexcharts- and web-adapter are running.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.2.0 (2024-11-06)
 * (MyHomeMyData) Updated readme. Added sections Templates and Reference.
 * (MyHomeMyData) Fix for issue #41 (findings of repository checker)
 * (MyHomeMyData) Updated ECharts to version 5.5.1, see issue #40
