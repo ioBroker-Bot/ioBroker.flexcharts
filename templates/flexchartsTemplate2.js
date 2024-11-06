@@ -21,13 +21,13 @@
    Adapt 'localhost' and '8082' according to your needs
 */
 
-// 22.10.2024   MyHomeMyData
+// 06.11.2024   MyHomeMyData
 
 const instanceHistory = 'influxdb.0';                // Instance of history adapter to be used
 
 const tsScriptStart = new Date().getTime();          // Remember time stamp of start of this script
 
-onMessage('mylinechart', (data, callback) => {
+onMessage('mylinechart', (httpParams, callback) => {
     // Waiting for messages "mylinechart". Will be sent by adapter flexcharts.
     lineChart(callback);
 });

@@ -21,7 +21,7 @@
    Implemented periods: "daily", "monthly", "yearly"
 */
 
-// 22.10.2024   MyHomeMyData
+// 06.11.2024   MyHomeMyData
 
 const instanceHistory = 'history.0';                // Instance of history adapter to be used
 
@@ -33,12 +33,12 @@ const paramKeysAllowed = ['period','start']; // List of alle allowed parameter k
 
 const DEBUG = 1;    // Set to non zero value to get additional log entries.
 
-onMessage('flexchartsdemo', (data, callback) => {
+onMessage('flexchartsdemo', (httpParams, callback) => {
     // Waiting for messages "flexchartsdemo". Will be sent by adapter flexcharts.
     // Evaluate http parameters and create requested chart
     // In case of invalid or missing parameters create demo- or error-chart
-    const chart   = data.chart;
-    const params  = (data.params ? JSON.parse(data.params) : {} );
+    const chart   = httpParams.chart;
+    const params  = (httpParams.params ? JSON.parse(httpParams.params) : {} );
 
     // Check paramter keys:
     for (const p of Object.keys(params)) {
