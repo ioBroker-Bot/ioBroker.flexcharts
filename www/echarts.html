@@ -36,6 +36,25 @@
         //console.log(svgStr);
       });
 
+      function downloadChart(chart) {
+        const url = chart.getDataURL({ type: 'png', backgroundColor: '#ffffff', pixelRatio: 2 });
+        const link = document.createElement('a');
+        link.download = `chart_${new Date().toISOString()}.png`;
+        link.href = url;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      let exportPngDone = false;
+      myChart.on('finished', () => {
+        // Do an export of the chart to PNG format when chart rendering has finished for the first time
+        if (!exportPngDone) {
+          exportPngDone = true;
+          downloadChart(myChart);
+        }
+      });
+
       myChart.setOption(jsopts);
       //svgChart.setOption(jsopts);
     </script>
