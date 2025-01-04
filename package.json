@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.2.2",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "javascript-stringify": "^2.1.0"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^3.7.0",
