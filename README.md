@@ -144,10 +144,24 @@ myJsonParams = {"period":"daily"}
 
 Pls. note, **you have to use the `onMessage()` functionality to receive the trigger from the adapter**. Default vaule for the message is `flexcharts` as shown in example above. You may use different messages by providing an additional parameter, e.g. to use message `mycharts` add `&message=mycharts` to http address: `http://localhost:8082/flexcharts/echarts.html?source=script&message=mycharts`
 
+### Using functions within definition of chart
+Unfortunately it's not possible to include functions within chart definition with above described methods.
+Since V0.3.0 of flexcharts this is possible using `onMessage()` interface. A bit more effort is needed:
+* Add npm module `javascript-stringify` to instance 0 of javascript adapter. To do so, add `javascript-stringify` to "Additional npm modules" in configuration of adapter:
+![add npm modules](add_npm_modules.png)
+* In your script add `var strify = require('javascript-stringify');` at the beginning
+* Within your `onMessage()` functionality replace `callback(option);` by `callback(strify.stringify(option));` (assuming `option` contains your chart definition).
+* That's it. Now functions within chart definitions will be correctly forwarded to flexcharts.
+
+Just try it using [template3](templates/flexchartsTemplate3.js). A function is used to show data of tooltip with 2 decimals: `tooltip: {trigger: "axis", valueFormatter: (value) => '$' + value.toFixed(2)}`.
+
+Background: When using the standard callback() functionality within onMessage() for an object, a hidden `JSON.stringify()`/`JSON.parse()` is executed and any functions included in the object are lost.
+
 ## Templates
 Javascript templates are available for some uses cases:
 * chart using data from history adapter: [template1](templates/flexchartsTemplate1.js)
 * simple chart for a heat curve: [template2](templates/flexchartsTemplate2.js)
+* simple stacked bar chart using function within chart definition: [template3](templates/flexchartsTemplate3.js)
 * a very specific use case is available for Viessmann devices of E3 series, e.g. heat pump Vitocal 250. Refer to https://github.com/MyHomeMyData/ioBroker.e3oncan/discussions/35
 
 ## Reference
