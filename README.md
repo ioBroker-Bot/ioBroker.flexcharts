@@ -157,6 +157,8 @@ Just try it using [template3](templates/flexchartsTemplate3.js). A function is u
 
 Background: When using the standard callback() functionality within onMessage() for an object, a hidden `JSON.stringify()`/`JSON.parse()` is executed and any functions included in the object are lost.
 
+Remark: It's not possible to include function in chart defintion when using ioBroker state as source of data.
+
 ## Templates
 Javascript templates are available for some uses cases:
 * chart using data from history adapter: [template1](templates/flexchartsTemplate1.js)
@@ -175,6 +177,9 @@ Use **javascript** as data source: `http://localhost:8082/flexcharts/echarts.htm
 * `&darkmode` - activates dark mode visualization of ECharts.
 * `&refresh=number` - do a refresh of chart ervery "number" seconds. Defaults to 60 seconds. Minimum allowed value is 5 seconds.
 * `&user_defined_arguments` - Add more parameters as per your need. All arguments are available within function `onMessage()` in object `httpParams`. See examples above and templates for more details.
+
+### Using functions within definition of charts
+Available when using script as source of data. Pls. refer previous [chapter](#using-functions-within-definition-of-chart)
 
 ### Built-in demo chart
 There is a built-in demo chart available: http://localhost:8082/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart1
