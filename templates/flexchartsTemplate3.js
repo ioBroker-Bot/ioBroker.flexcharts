@@ -34,7 +34,7 @@ function chart1(callback) {
     const option = {
         tooltip: {
             trigger: "axis",
-            valueFormatter: (value) => '$' + value.toFixed(2)
+            valueFormatter: (value) => value.toFixed(2)
         },
         legend: {},
         xAxis: [{type: "category", data: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]}],

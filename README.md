@@ -145,19 +145,19 @@ myJsonParams = {"period":"daily"}
 Pls. note, **you have to use the `onMessage()` functionality to receive the trigger from the adapter**. Default vaule for the message is `flexcharts` as shown in example above. You may use different messages by providing an additional parameter, e.g. to use message `mycharts` add `&message=mycharts` to http address: `http://localhost:8082/flexcharts/echarts.html?source=script&message=mycharts`
 
 ### Using functions within definition of chart
-Unfortunately it's not possible to include functions within chart definition with above described methods.
-Since V0.3.0 of flexcharts this is possible using `onMessage()` interface. A bit more effort is needed:
+Unfortunately function definitions within chart definition will typically not work because it's filtered when using `JSON.stringify(option)` or `callback(option)`.
+
+However, since V0.3.0 of flexcharts it's possible to bring it to work. A bit more effort is needed:
 * Add npm module `javascript-stringify` to instance 0 of javascript adapter. To do so, add `javascript-stringify` to "Additional npm modules" in configuration of adapter:
 ![add npm modules](add_npm_modules.png)
 * In your script add `var strify = require('javascript-stringify');` at the beginning
-* Within your `onMessage()` functionality replace `callback(option);` by `callback(strify.stringify(option));` (assuming `option` contains your chart definition).
+* When using script as data source: Within your `onMessage()` functionality replace `callback(option);` by `callback(strify.stringify(option));` (assuming `option` contains your chart definition).
+* Then using a state as data source: When creating the state replace `setState('my_chart_id', JSON.stringify(option), true);` by `setState('my_chart_id', strify.stringify(option), true);`
 * That's it. Now functions within chart definitions will be correctly forwarded to flexcharts.
 
 Just try it using [template3](templates/flexchartsTemplate3.js). A function is used to show data of tooltip with 2 decimals: `tooltip: {trigger: "axis", valueFormatter: (value) => '$' + value.toFixed(2)}`.
 
-Background: When using the standard callback() functionality within onMessage() for an object, a hidden `JSON.stringify()`/`JSON.parse()` is executed and any functions included in the object are lost.
-
-Remark: It's not possible to include function in chart defintion when using ioBroker state as source of data.
+An example using chart definition via state is given in `flexcharts.0.info.chart2`. This will show same chart as template3.
 
 ## Templates
 Javascript templates are available for some uses cases:
@@ -179,7 +179,7 @@ Use **javascript** as data source: `http://localhost:8082/flexcharts/echarts.htm
 * `&user_defined_arguments` - Add more parameters as per your need. All arguments are available within function `onMessage()` in object `httpParams`. See examples above and templates for more details.
 
 ### Using functions within definition of charts
-Available when using script as source of data. Pls. refer previous [chapter](#using-functions-within-definition-of-chart)
+Available with version 0.3.0 or newer. Pls. refer previous [chapter](#using-functions-within-definition-of-chart)
 
 ### Built-in demo chart
 There is a built-in demo chart available: http://localhost:8082/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart1
