@@ -159,6 +159,8 @@ Just try it using [template3](templates/flexchartsTemplate3.js). A function is u
 
 An example using chart definition via state is given in `flexcharts.0.info.chart2`. This will show same chart as template3.
 
+Remark: When npm module `javascript-stringify` is installed, it's functionality could also be used by malicious code (Cross-Site-Scripting). Therefore, ioBroker should not be accessible from the Internet when using this module.
+
 ## Templates
 Javascript templates are available for some uses cases:
 * chart using data from history adapter: [template1](templates/flexchartsTemplate1.js)
