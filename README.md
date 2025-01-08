@@ -197,6 +197,7 @@ This should bring up a demo chart, when flexcharts- and web-adapter are running.
 -->
 ### **WORK IN PROGRESS**
 * (MyHomeMyData) Enhancement for usage of functions within echart definitions.
+* (MyHomeMyData) Fix for issue #56 (findings of repository checker)
 
 ### 0.2.0 (2024-11-06)
 * (MyHomeMyData) Updated readme. Added sections Templates and Reference.
