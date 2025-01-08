@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "news": {
+      "0.3.0": {
+        "en": "Enhancement for usage of functions within echart definitions.\nFix for issue #56 (findings of repository checker)",
+        "de": "Erweiterung zur Nutzung von Funktionen innerhalb von echart Definitionen.\nFix für Issue #56 (Ergebnisse des Repository-Checkers)",
+        "ru": "Повышение эффективности использования функций в рамках определений экарта.\nИсправление для выпуска #56 (поиск репозиторий)",
+        "pt": "Melhoria para o uso de funções dentro de definições de echart.\nCorrigir para a edição #56 (definição do verificador de repositório)",
+        "nl": "Verbetering voor het gebruik van functies binnen echart definities.\nFix voor probleem #56 (bevindingen van repository checker)",
+        "fr": "Amélioration de l'utilisation des fonctions dans les définitions des cartes électroniques.\nCorrection pour le numéro 56 (recherches du vérificateur du dépôt)",
+        "it": "Miglioramento per l'uso di funzioni all'interno delle definizioni di echart.\nFissare per il numero #56 (finanze di repository checker)",
+        "es": "Mejora para el uso de funciones dentro de las definiciones de echart.\nFijación para el número #56 (definiciones de repositorio)",
+        "pl": "Zwiększenie wykorzystania funkcji w ramach definicji echarta.\nFix for issue # 56 (wyniki sprawdzania repozytorium)",
+        "uk": "Розширення для використання функцій в echart визначеннях.\nВиправлення для випуску #56 (підписи репозиторійного чекера)",
+        "zh-cn": "加强技术定义内功能的使用.\n修复第56期(查找仓库检查器)"
+      },
       "0.2.0": {
         "en": "Updated readme. Added sections Templates and Reference.\nFix for issue #41 (findings of repository checker)\nUpdated ECharts to version 5.5.1, see issue #40\nFix for issue #39 (html warnings)\nAdded option 'refresh' to enable auto update of chart",
         "de": "Readme aktualisiert. Abschnitte Templates und Reference hinzugefügt.\nFix für Issue #41 (Ergebnisse des Repository-Checkers)\nECharts auf Version 5.5.1 aktualisiert, siehe Issue #40\nFix für Issue #39 (html Warnungen)\nOption 'refresh' hinzugefügt, um das automatische Update des Diagramms zu aktivieren",
@@ -80,19 +93,6 @@
         "pl": "Konfiguracje adaptera",
         "uk": "Адаптивні конфігурації адаптера",
         "zh-cn": "适应适配器配置"
-      },
-      "0.1.1": {
-        "en": "Removed main.js from package.json since it's obsolete",
-        "de": "Eintrag main.js aus package.json entfernt, da es nicht mehr benötigt wird",
-        "ru": "Удалить основные.js из пакета. Джейсон, так как он устарел",
-        "pt": "Removido main.js do pacote. json desde que é obsoleto",
-        "nl": "Verwijderde main.js uit pakket. Json omdat het verouderd is",
-        "fr": "Supprimé main.js du paquet. Json depuis que c'est obsolète",
-        "it": "Rimuoveto main.js dal pacchetto. json da quando è obsoleto",
-        "es": "Retirado main.js del paquete. Json ya que es obsoleto",
-        "pl": "Usunięto main.js z pakietu. Json ponieważ jest przestarzały",
-        "uk": "Видалити основний.js з пакета. json так як це obsolete",
-        "zh-cn": "从软件包中删除主.js. Json 已经过时了"
       }
     },
     "titleLang": {
