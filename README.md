@@ -82,7 +82,7 @@ Example: http://localhost:8082/flexcharts/echarts.html?<mark style="background-c
 
 Flexcharts will evaluate state `0_userdata.0.echarts.chart1` as data for eChart. Try it: Create such a state and copy json data of example shown above (`{ "tooltip": { ...`) as state content, then access given address with a browser.
 
-It's not allowed to use following characters in the state id: `: / ? # [ ] @ ! $ & ' ( ) * + , ; =` 
+It's not allowed to use following characters in the state id: `: / ? # [ ] @ ! $ & ' ( ) * + , ; = %` 
 
 ### Use javascript as source for an eChart
 
