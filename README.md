@@ -166,6 +166,7 @@ Javascript templates are available for some uses cases:
 * chart using data from history adapter: [template1](templates/flexchartsTemplate1.js)
 * simple chart for a heat curve: [template2](templates/flexchartsTemplate2.js)
 * simple stacked bar chart using function within chart definition: [template3](templates/flexchartsTemplate3.js)
+* chart for data of **tibberLink adapter**: see discussions [here](https://github.com/MyHomeMyData/ioBroker.flexcharts/discussions/67) and [here](https://github.com/MyHomeMyData/ioBroker.flexcharts/discussions/66)
 * a very specific use case is available for Viessmann devices of E3 series, e.g. heat pump Vitocal 250. Refer to https://github.com/MyHomeMyData/ioBroker.e3oncan/discussions/35
 
 ## Reference
