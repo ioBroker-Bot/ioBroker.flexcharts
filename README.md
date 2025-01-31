@@ -198,7 +198,8 @@ This should bring up a demo chart, when flexcharts- and web-adapter are running.
 -->
 ### **WORK IN PROGRESS**
 * (MyHomeMyData) Updated Apache ECharts to version 5.6.0
-* (MyHomeMyData) Added support for 3D charts using extension echarts-gl, see issue #68
+* (MyHomeMyData) Added support for 3D charts using extension ecUpdatedharts-gl, see issue #68
+* (MyHomeMyData) Added templates for tibberLink Adapter
 
 ### 0.3.0 (2025-01-08)
 * (MyHomeMyData) Enhancement for usage of functions within echart definitions.
