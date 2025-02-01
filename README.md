@@ -168,6 +168,7 @@ Javascript templates are available for some uses cases:
 * chart using data from history adapter: [template1](templates/flexchartsTemplate1.js)
 * simple chart for a heat curve: [template2](templates/flexchartsTemplate2.js)
 * simple stacked bar chart using function within chart definition: [template3](templates/flexchartsTemplate3.js)
+* chart for data of **tibberLink adapter**: see discussions [here](https://github.com/MyHomeMyData/ioBroker.flexcharts/discussions/67) and [here](https://github.com/MyHomeMyData/ioBroker.flexcharts/discussions/66)
 * a very specific use case is available for Viessmann devices of E3 series, e.g. heat pump Vitocal 250. Refer to https://github.com/MyHomeMyData/ioBroker.e3oncan/discussions/35
 
 ## Reference
@@ -197,6 +198,11 @@ This should bring up a demo chart, when flexcharts- and web-adapter are running.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (MyHomeMyData) Updated Apache ECharts to version 5.6.0
+* (MyHomeMyData) Added support for 3D charts using extension ecUpdatedharts-gl, see issue #68
+* (MyHomeMyData) Added templates for tibberLink Adapter
+
 ### 0.3.0 (2025-01-08)
 * (MyHomeMyData) Enhancement for usage of functions within echart definitions.
 * (MyHomeMyData) Fix for issue #56 (findings of repository checker)
