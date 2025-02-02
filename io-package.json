@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "news": {
+      "0.3.1": {
+        "en": "Updated Apache ECharts to version 5.6.0\nAdded support for 3D charts using extension echarts-gl, see issue #68\nAdded templates for tibberLink Adapter",
+        "de": "Apache ECharts auf Version 5.6.0 aktualisiert\nUnterstützung für 3D-Diagramme mit der Erweiterung echarts-gl, siehe Issue #68\nVorlagen für tibberLink Adapter hinzugefügt",
+        "ru": "Обновление Apache ECharts к версии 5.6.0\nДобавлена поддержка 3D-графиков с использованием расширения echarts-gl, см. issue #68\nДобавленные шаблоны для адаптера tibberLink",
+        "pt": "Atualizado Apache ECharts para a versão 5.6.0\nAdicionado suporte para gráficos 3D usando extensão echarts-gl, ver problema #68\nAdicionado modelos para tibberLink Adapter",
+        "nl": "Bijgewerkt Apache ECharts naar versie 5.6.0\nToegevoegd ondersteuning voor 3D grafieken met extensie echarts-gl, zie probleem #68\nToegevoegd sjablonen voor tibberLink Adapter",
+        "fr": "Mise à jour de Apache ECharts vers la version 5.6.0\nAjout de la prise en charge des graphiques 3D à l'aide de l'extension echarts-gl, voir le numéro 68\nAjout de modèles pour l'adaptateur de tibberLink",
+        "it": "Aggiornato Apache ECharts alla versione 5.6.0\nAggiunto il supporto per i grafici 3D utilizzando l'estensione echarts-gl, vedi numero #68\nModelli aggiunti per tibberLink Adapter",
+        "es": "Apache ECharts actualizado a la versión 5.6.0\nAñadido soporte para gráficos 3D con extensión echarts-gl, ver número #68\nPlantillas adicionales para el adaptador de tibberLink",
+        "pl": "Aktualizacja Apache ECharts do wersji 5.6.0\nDodano obsługę map 3D przy użyciu rozszerzenia echarts-gl, patrz numer # 68\nDodano szablony dla adaptera TibberLink",
+        "uk": "Оновлено Apache ECharts до версії 5.6.0\nДодано підтримку діаграм 3D за допомогою розширення echarts-gl, див. проблему #68\nДодано шаблони для tibberLink адаптер",
+        "zh-cn": "更新Apache ECharts至5.6.0版本\n使用扩展 echartsts-gl 添加了对 3D 图表的支持, 请见问题 68\n为 tibberLink 适配器添加模板"
+      },
       "0.3.0": {
         "en": "Enhancement for usage of functions within echart definitions.\nFix for issue #56 (findings of repository checker)",
         "de": "Erweiterung zur Nutzung von Funktionen innerhalb von echart Definitionen.\nFix für Issue #56 (Ergebnisse des Repository-Checkers)",
@@ -80,19 +93,6 @@
         "pl": "Naprawiono problem w systemach Windows (obsługa ścieżki plików)",
         "uk": "Виправлено проблему на вікнах системи (ручка шляху до файлу)",
         "zh-cn": "窗口系统的固定发行( 文件路径处理)"
-      },
-      "0.1.2": {
-        "en": "Adapted adapter configurations",
-        "de": "Adapterkonfigurationen angepasst",
-        "ru": "Адаптированные конфигурации адаптера",
-        "pt": "Configurações do adaptador adaptado",
-        "nl": "Aangepaste adapterconfiguraties",
-        "fr": "Configurations d'adaptateurs adaptées",
-        "it": "Configurazioni adattatori",
-        "es": "Configuraciones adaptadoras",
-        "pl": "Konfiguracje adaptera",
-        "uk": "Адаптивні конфігурації адаптера",
-        "zh-cn": "适应适配器配置"
       }
     },
     "titleLang": {

@@ -198,9 +198,9 @@ This should bring up a demo chart, when flexcharts- and web-adapter are running.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.3.1 (2025-02-02)
 * (MyHomeMyData) Updated Apache ECharts to version 5.6.0
-* (MyHomeMyData) Added support for 3D charts using extension ecUpdatedharts-gl, see issue #68
+* (MyHomeMyData) Added support for 3D charts using extension echarts-gl, see issue #68
 * (MyHomeMyData) Added templates for tibberLink Adapter
 
 ### 0.3.0 (2025-01-08)
