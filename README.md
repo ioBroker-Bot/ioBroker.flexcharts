@@ -193,6 +193,11 @@ This should bring up a demo chart, when flexcharts- and web-adapter are running.
 
 **Note:** Replace `localhost` by address of your ioBroker server. Replace `8082` by port number used by your Web-Adapter.
 
+## Donate
+
+<a href="https://www.paypal.com/donate/?hosted_button_id=WKY6JPYJNCCCQ"><img src="https://raw.githubusercontent.com/MyHomeMyData/ioBroker.flexcharts/main/admin/bluePayPal.svg" height="40"></a>  
+If you enjoyed this project — or just feeling generous, consider buying me a beer. Cheers! :beers:
+
 ## Changelog
 <!--
 	Placeholder for the next version (at the beginning of the line):
