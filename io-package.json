@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "news": {
+      "0.3.2": {
+        "en": "Added hint for use of flexcharts by adapter tibberLink",
+        "de": "Hinweis ergänzt über die Verwendung von Flexcharts durch Adapter tibberLink",
+        "ru": "Добавлен намек на использование flexcharts с помощью адаптера tibberСсылка",
+        "pt": "Adicionado dica para uso de flexcharts por adaptador tibberLink",
+        "nl": "Toegevoegd hint voor gebruik van flexcharts door adapter tibberLink",
+        "fr": "Ajout d'un indice pour l'utilisation de flexcharts par adaptateur tibberLink",
+        "it": "Aggiunto suggerimento per uso di flexcharts da adattatore tibberLink",
+        "es": "Insinuación agregada para el uso de flexcharts por tibberLink adaptador",
+        "pl": "Dodano podpowiedź do użycia fleksmap przez tibberLink adapter",
+        "uk": "Додана підказка для використання флексарів адаптером tibberLink",
+        "zh-cn": "通过适配器 tibberLink 添加了用于使用弹性图的提示 链接"
+      },
       "0.3.1": {
         "en": "Updated Apache ECharts to version 5.6.0\nAdded support for 3D charts using extension echarts-gl, see issue #68\nAdded templates for tibberLink Adapter",
         "de": "Apache ECharts auf Version 5.6.0 aktualisiert\nUnterstützung für 3D-Diagramme mit der Erweiterung echarts-gl, siehe Issue #68\nVorlagen für tibberLink Adapter hinzugefügt",
@@ -80,19 +93,6 @@
         "pl": "Fixes for issue # 34\nFixes for issue # 33",
         "uk": "Виправлення для випуску #34\nВиправлення для випуску #33",
         "zh-cn": "第34期的修改\n修复第33期"
-      },
-      "0.1.3": {
-        "en": "Fixed issue on windows systems (handling of file path)",
-        "de": "Problem behoben bei Windows-Systemen (Handling des Dateipfads)",
-        "ru": "Исправленная проблема на системах Windows (руководство по пути файла)",
-        "pt": "Problema fixo em sistemas de janelas (manuseamento do caminho do arquivo)",
-        "nl": "Vast probleem op windows-systemen (afhandeling van bestandspad)",
-        "fr": "Problème corrigé sur les systèmes Windows (traitement du chemin de fichier)",
-        "it": "Problema fisso sui sistemi Windows (manuale del percorso file)",
-        "es": "Edición fija en sistemas de ventanas (manejo de la ruta del archivo)",
-        "pl": "Naprawiono problem w systemach Windows (obsługa ścieżki plików)",
-        "uk": "Виправлено проблему на вікнах системи (ручка шляху до файлу)",
-        "zh-cn": "窗口系统的固定发行( 文件路径处理)"
       }
     },
     "titleLang": {

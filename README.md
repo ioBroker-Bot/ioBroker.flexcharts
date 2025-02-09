@@ -204,7 +204,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.3.2 (2025-02-09)
 * (MyHomeMyData) Added hint for use of flexcharts by adapter tibberLink
 
 ### 0.3.1 (2025-02-02)
