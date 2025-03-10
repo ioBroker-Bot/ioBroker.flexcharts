@@ -38,6 +38,25 @@
       });
 
       myChart.setOption(jsopts);
+
+      myChart.on('updateAxisPointer', function (event) {
+        const xAxisInfo = event.axesInfo[0];
+        if (xAxisInfo) {
+          const dimension = xAxisInfo.value + 1;
+          myChart.setOption({
+            series: {
+              id: 'pie',
+              label: {
+                formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+              },
+              encode: {
+                value: dimension,
+                tooltip: dimension
+              }
+            }
+          });
+        }
+      });
       //svgChart.setOption(jsopts);
     </script>
   </body>
