@@ -15,7 +15,7 @@
     <!-- Prepare a DOM with a defined width and height for ECharts -->
     <div id="main" ></div>
     <script>
-      var jsopts = { solution: 42 };
+      var jsopts = { /* chartOptions */ };
       var myChart = echarts.init(document.getElementById('main'),null,{
         width: window.innerWidth-10,
         height: window.innerHeight-20,
@@ -39,24 +39,8 @@
 
       myChart.setOption(jsopts);
 
-      myChart.on('updateAxisPointer', function (event) {
-        const xAxisInfo = event.axesInfo[0];
-        if (xAxisInfo) {
-          const dimension = xAxisInfo.value + 1;
-          myChart.setOption({
-            series: {
-              id: 'pie',
-              label: {
-                formatter: '{b}: {@[' + dimension + ']} ({d}%)'
-              },
-              encode: {
-                value: dimension,
-                tooltip: dimension
-              }
-            }
-          });
-        }
-      });
+      /* onEventFunctions() */
+
       //svgChart.setOption(jsopts);
     </script>
   </body>

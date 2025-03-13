@@ -163,6 +163,9 @@ An example using chart definition via state is given in `flexcharts.0.info.chart
 
 Remark: When npm module `javascript-stringify` is installed, it's functionality could also be used by malicious code (Cross-Site-Scripting). Therefore, ioBroker should not be accessible from the Internet when using this module.
 
+### Using event driven functions within definition of chart
+* description is missing, yet
+
 ## Templates
 Javascript templates are available for some uses cases:
 * chart using data from history adapter: [template1](templates/flexchartsTemplate1.js)
@@ -203,6 +206,9 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (MyHomeMyData) Added functionality to support event driven functions within charts, ref. issue #85
+
 ### 0.3.1 (2025-02-02)
 * (MyHomeMyData) Updated Apache ECharts to version 5.6.0
 * (MyHomeMyData) Added support for 3D charts using extension echarts-gl, see issue #68
