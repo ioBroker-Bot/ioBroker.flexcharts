@@ -15,7 +15,7 @@
     <!-- Prepare a DOM with a defined width and height for ECharts -->
     <div id="main" ></div>
     <script>
-      var jsopts = { solution: 42 };
+      var jsopts = { /* chartOptions */ };
       var myChart = echarts.init(document.getElementById('main'),null,{
         width: window.innerWidth-10,
         height: window.innerHeight-20,
@@ -38,6 +38,9 @@
       });
 
       myChart.setOption(jsopts);
+
+      /* onEventFunctions() */
+
       //svgChart.setOption(jsopts);
     </script>
   </body>
