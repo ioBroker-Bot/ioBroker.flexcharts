@@ -175,6 +175,8 @@ To use this feature for your own charts I recommend to use a **script as source*
 * Finally, you have to provide both parts, definition of chart and definition of event function(s), as an **array of Javascript Strings** via the callback. In template 4 it's done as `callback([strify.stringify(option), onEvent]);` where `option` contains the chart definition and `onEvent` contains the definition of event function as a Javascript String. If you define more than one function all functions have to go to the String `onEvent`.
 * To stringify the definition of the chart (`option`) you have to use `javascript-stringify` as described in previous chapter.
 
+Remark: When npm module `javascript-stringify` is installed, it's functionality could also be used by malicious code (Cross-Site-Scripting). Therefore, ioBroker should not be accessible from the Internet when using this module.
+
 It's also possible to use this feature with a **state as source** of data. However, it's even more tricky:
 * The state has to be made up as an **array of JSON Strings**. The two elements of the array consists of the definition of chart and the definition of event function(s).
 * But now, both Strings has to be valid **JSON Strings**. This is different from Javascript Strings and brings additional restrictions:
@@ -183,7 +185,6 @@ It's also possible to use this feature with a **state as source** of data. Howev
 * It's a good idea to make sure about validity of the array by using a JSON validator, e.g. [this one](https://jsonformatter.curiousconcept.com/#).
 * Of course you want to manipulate the data of the chart. But the data is part of the definition of the chart. So you have to read and write the array of JSON Strings using Javascript. Therefore I recomment to use a script as source of data as described above.
 * However, an example is available within info part of flexcharts: `flexcharts.0.info.chart3`. To view in a browser use `http://localhost:8082/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart3`
-
 
 ## Templates
 Javascript templates are available for some uses cases:
