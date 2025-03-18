@@ -1,0 +1,10 @@
+services:
+  iobroker:
+    container_name: iobroker
+    image: buanet/iobroker
+    volumes:
+      - "~/iobroker/localdocker/iobroker:/opt/iobroker"
+    restart: unless-stopped
+    ports:
+      - "8181:8081"
+
