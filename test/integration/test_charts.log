@@ -1,8 +1,14 @@
-2025-03-19 15:27:03 ./test_charts.sh integration test started.
+2025-03-19 23:08:22 ./test_charts.sh integration test started.
 Check for default chart ... OK
 Check for page 404 ... OK
 Check for flexcharts.0.info.chart2 ... OK
 Check for flexcharts.0.info.chart2 dark mode ... OK
 Check for flexcharts.0.info.chart3 using onEvent function ... OK
-5 tests ok and 0 tests failed
-2025-03-19 15:27:03 ./test_charts.sh integration test finished.
+Check for callback share_dataset ... OK
+Check for callback share_dataset dark mode ... OK
+Check for callback share_dataset dark mode and refresh 2 ... OK
+Check for callback share_dataset dark mode and refresh 10 ... OK
+Check for echarts.js ... OK
+Check for echarts-gl.min.js ... OK
+11 tests ok and 0 tests failed
+2025-03-19 23:08:22 ./test_charts.sh integration test finished.
