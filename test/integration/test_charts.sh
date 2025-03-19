@@ -85,7 +85,7 @@ function test_curl()  {
 # M A I N        #
 ##################
 
-LOG="test_charts.log"
+LOG=".test_charts.log"
 EXPECT="expect/"    # sub folder for expected data
 CNT_OK=0        # Counter tests passed
 CNT_NOK=0       # Counter tests failed
