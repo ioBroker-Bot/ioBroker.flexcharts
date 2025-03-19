@@ -1,0 +1,8 @@
+2025-03-19 15:27:03 ./test_charts.sh integration test started.
+Check for default chart ... OK
+Check for page 404 ... OK
+Check for flexcharts.0.info.chart2 ... OK
+Check for flexcharts.0.info.chart2 dark mode ... OK
+Check for flexcharts.0.info.chart3 using onEvent function ... OK
+5 tests ok and 0 tests failed
+2025-03-19 15:27:03 ./test_charts.sh integration test finished.
