@@ -2,14 +2,20 @@
 
 # Integration tests for flexcharts
 #
-# Using port 8082 as default. Port number may be specified as parameter-
+# Using localhost:8082 as default. Server address and port number may be specified as parameters.
 #
-# Usage: ./test_charts.sh [port]
+# To (re-) create expectation files use SETUP as 3rd parameter.
+#
+# Usage: ./test_charts.sh [server] [port] [mode]
 
-# MyHomeMyData  2025.03
+# Return codes:
+#   0   All tests passed
+#   1   At least one test failed - see log file (./.test_charts.log) for details
+
+# 20.03.2025    MyHomeMyData
 
 function test_curl()  {
-    # Get data from flexcharts via curl and evaluate result
+    # Get data from flexcharts via curl and evaluate result or create expectation file (mode SETUP)
     # Assign parameters:
     title="$1"      # Title of test case
     addr="$2"       # Server address
@@ -134,6 +140,7 @@ fi
  
 # Do the testing:
 test_curl "Check for page 404" "http://$HOST:$PORT/flexcharts/echart.html" "chart.404" "$MODE"
+test_curl "Check for flexcharts.0.info.chart1" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart1" "info.chart1.default" "$MODE"
 test_curl "Check for flexcharts.0.info.chart2" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart2" "info.chart2.default" "$MODE"
 test_curl "Check for flexcharts.0.info.chart2 dark mode" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart2&darkmode" "info.chart2.dark" "$MODE"
 test_curl "Check for flexcharts.0.info.chart3 using embedded function" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart3" "info.chart3.default" "$MODE"
@@ -156,7 +163,7 @@ then
 else
     NOK=""
     OK="$FMT_BOLD$FMT_GREEN"
-    ec="113"
+    ec="1"
 fi
 echo -e "\n$OK$CNT_OK tests passed and $NOK$CNT_NOK tests failed."$FMT_RST
 echo "$CNT_OK tests ok and $CNT_NOK tests failed" >> "$LOG"
