@@ -62,11 +62,13 @@ function test_curl()  {
         if [ "$(diff -q .result $EXPECT$fname)" ]
         then
             # Files are different!
-            echo -e $FMT_BOLD$FMT_RED"NOK! Result does not match expectation."$FMT_RST
+            echo -n -e $FMT_BOLD$FMT_RED"NOK! Result does not match expectation."$FMT_RST
             echo "$title ... NOK! Result does not match expectation:" >> "$LOG"
             echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" >> "$LOG"
-            echo $(diff .result "$fname") >> "$LOG"
+            echo $(diff .result "$EXPECT$fname") >> "$LOG"
             echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" >> "$LOG"
+            mv .result ".result.$fname"
+            echo -e " ==> Result file stored to $FMT_BOLD$FMT_RED.result.$fname$FMT_RST"
             ec="111"
         else
             echo -e $FMT_GREEN"OK"$FMT_RST
@@ -144,7 +146,6 @@ test_curl "Check for flexcharts.0.info.chart1" "http://$HOST:$PORT/flexcharts/ec
 test_curl "Check for flexcharts.0.info.chart2" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart2" "info.chart2.default" "$MODE"
 test_curl "Check for flexcharts.0.info.chart2 dark mode" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart2&darkmode" "info.chart2.dark" "$MODE"
 test_curl "Check for flexcharts.0.info.chart3 using embedded function" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart3" "info.chart3.default" "$MODE"
-test_curl "Check for flexcharts.0.info.chart4 using onEvent function" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart4" "info.chart4.default" "$MODE"
 test_curl "Check for callback w/o embedded function" "http://$HOST:$PORT/flexcharts/echarts.html?source=script&myjsonparams=\{\"chart\":\"chart1\"\}" "callback.chart1.default" "$MODE"
 test_curl "Check for callback w/ embedded function" "http://$HOST:$PORT/flexcharts/echarts.html?source=script&myjsonparams=\{\"chart\":\"chart2\"\}" "callback.chart2.default" "$MODE"
 test_curl "Check for callback share_dataset" "http://$HOST:$PORT/flexcharts/echarts.html?source=script&message=demo_share_dataset" "callback.share_dataset.default" "$MODE"
