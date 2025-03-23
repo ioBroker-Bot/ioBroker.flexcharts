@@ -229,6 +229,8 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 -->
 ### **WORK IN PROGRESS**
 * (MyHomeMyData) Added functionality to support event driven functions within charts, ref. issue #85
+* (MyHomeMyData) Added timeout for script as source
+* (MyHomeMyData) Added test cases for integration testing
 
 ### 0.3.1 (2025-02-02)
 * (MyHomeMyData) Updated Apache ECharts to version 5.6.0
