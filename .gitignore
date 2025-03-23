@@ -18,3 +18,6 @@ admin/i18n/*/flat.txt
 
 # helper files
 todo.md
+
+# integration test
+test/integration/.*
