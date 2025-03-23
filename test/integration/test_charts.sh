@@ -26,7 +26,7 @@ function test_curl()  {
     then
         # SETUP-Mode => Create expectation file
         echo -n "SETUP Mode. Create expectation file for '$title' ... "
-        curl -s -m 2 "$addr" > $EXPECT$fname
+        curl -s -m $TIMEOUT "$addr" > $EXPECT$fname
         ec="$?"
         if [ "$ec" = "0" ]
         then
@@ -55,7 +55,7 @@ function test_curl()  {
     fi
 
     echo "" > .result       # clear result file
-    curl -s -m 2 "$addr" > .result
+    curl -s -m $TIMEOUT "$addr" > .result
     ec="$?"
     if [ "$ec" = "0" ]
     then
@@ -93,8 +93,12 @@ function test_curl()  {
 # M A I N        #
 ##################
 
+# Config:
 LOG=".test_charts.log"
 EXPECT="expect/"    # sub folder for expected data
+TIMEOUT=5       # Timeout for curl requests (s)
+
+# Counters:
 CNT_OK=0        # Counter tests passed
 CNT_NOK=0       # Counter tests failed
 
@@ -137,11 +141,12 @@ then
     # Test failed. Most propably server is not reachable
     echo -e "$FMT_BOLD"$FMT_RED"Fatal error. Error code=$ec. Aborting."$FMT_RST
     echo -e "Fatal error. Error code=$ec. Aborting." >> "$LOG"
-    exit $ec
+    exit "1"
 fi 
  
 # Do the testing:
 test_curl "Check for page 404" "http://$HOST:$PORT/flexcharts/echart.html" "chart.404" "$MODE"
+test_curl "Check for requesting unknown state" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.unknown" "info.unknown" "$MODE"
 test_curl "Check for flexcharts.0.info.chart1" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart1" "info.chart1.default" "$MODE"
 test_curl "Check for flexcharts.0.info.chart2" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart2" "info.chart2.default" "$MODE"
 test_curl "Check for flexcharts.0.info.chart2 dark mode" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart2&darkmode" "info.chart2.dark" "$MODE"
@@ -152,6 +157,7 @@ test_curl "Check for callback share_dataset" "http://$HOST:$PORT/flexcharts/echa
 test_curl "Check for callback share_dataset dark mode" "http://$HOST:$PORT/flexcharts/echarts.html?source=script&message=demo_share_dataset&darkmode" "callback.share_dataset.dark" "$MODE"
 test_curl "Check for callback share_dataset dark mode and refresh 2" "http://$HOST:$PORT/flexcharts/echarts.html?source=script&message=demo_share_dataset&darkmode&refresh=2" "callback.share_dataset.dark.rf2" "$MODE"
 test_curl "Check for callback share_dataset dark mode and refresh 10" "http://$HOST:$PORT/flexcharts/echarts.html?source=script&message=demo_share_dataset&darkmode&refresh=10" "callback.share_dataset.dark.rf10" "$MODE"
+test_curl "Check for timeout on callback with wrong message" "http://$HOST:$PORT/flexcharts/echarts.html?source=script&message=message_for_timeout" "callback.timeout" "$MODE"
 test_curl "Check for echarts.js" "http://$HOST:$PORT/flexcharts/echarts.min.js" "echarts.min.js" "$MODE"
 test_curl "Check for echarts-gl.min.js" "http://$HOST:$PORT/flexcharts/echarts-gl.min.js" "echarts-gl.min.js" "$MODE"
 
