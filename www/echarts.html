@@ -7,12 +7,10 @@
     <meta http-equiv="cache-control" content="public">
     <title>ECharts</title>
     <meta http-equiv="refresh" content="-3600">
-    <!-- Include the ECharts file you just downloaded -->
     <script src="echarts.min.js"></script>
     <script src="echarts-gl.min.js"></script>
   </head>
   <body>
-    <!-- Prepare a DOM with a defined width and height for ECharts -->
     <div id="main" ></div>
     <script>
       var jsopts = { /* chartOptions */ };
@@ -21,27 +19,17 @@
         height: window.innerHeight-20,
       });
 
-      //let svgChart = echarts.init(null, null, {
-      //  renderer: 'svg', // must use SVG rendering mode
-      //  ssr: true, // enable SSR
-      //  width: 400, // need to specify height and width
-      //  height: 300
-      //});
-
       window.addEventListener('resize', function() {
         myChart.resize({
           width: window.innerWidth-10,
           height: window.innerHeight-20,
         });
-        //const svgStr = svgChart.renderToSVGString();
-        //console.log(svgStr);
       });
 
       myChart.setOption(jsopts);
 
       /* onEventFunctions() */
 
-      //svgChart.setOption(jsopts);
     </script>
   </body>
 </html>
