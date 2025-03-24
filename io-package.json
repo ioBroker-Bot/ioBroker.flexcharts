@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.3.2",
+    "version": "0.4.0",
     "news": {
+      "0.4.0": {
+        "en": "Added functionality to support event driven functions within charts, ref. issue #85\nAdded timeout for script as source\nAdded test cases for integration testing",
+        "de": "Funktionalität hinzugefügt, um ereignisgesteuerte Funktionen innerhalb von Charts zu unterstützen, siehe Issue #85\nTimeout für Skript als Quelle hinzugefügt\nTestfälle für Integrationstests hinzugefügt",
+        "ru": "Добавлена функциональность для поддержки функций, управляемых событиями, в чартах, реферат #85\nДобавлен тайм-аут для сценария в качестве источника\nДобавлены тестовые примеры для интеграционного тестирования",
+        "pt": "Adicionada funcionalidade para apoiar funções conduzidas do evento dentro de gráficos, ref. problema #85\nAdicionado timeout para script como fonte\nProcessos de teste adicionados para testes de integração",
+        "nl": "Toegevoegd functionaliteit ter ondersteuning van event driving functies binnen grafieken, ref. probleem #85\nTimeout toegevoegd voor script als bron\nToegevoegde testcases voor integratietests",
+        "fr": "Ajout de fonctionnalités pour soutenir les fonctions animées par un événement dans les graphiques, réf. numéro 85\nAjout du timeout pour script comme source\nAutres cas d ' essai pour les essais d ' intégration",
+        "it": "Aggiunta funzionalità per supportare le funzioni guidate da eventi all'interno dei grafici, ref. numero #85\nTimeout aggiunto per lo script come fonte\nAggiunti casi di test per test di integrazione",
+        "es": "Función agregada para apoyar las funciones impulsadas por eventos dentro de los gráficos, ref. edición #85\nTiempo añadido para script como fuente\nCasos de prueba adicionales para pruebas de integración",
+        "pl": "Dodano funkcjonalność do obsługi funkcji napędzanych zdarzeniami w wykresach, ref. wydanie # 85\nDodano timeout dla skryptu jako źródła\nDodano przypadki testów do badań integracyjnych",
+        "uk": "Додано функціонал для підтримки керованих функцій події в діаграмах, реф. problem #85\nДодано час для скрипта як джерело\nДодано тестові випадки для тестування інтеграції",
+        "zh-cn": "在图表中添加支持事件驱动函数的功能,参见第85期\n作为源代码添加到脚本的超时\n加入综合测试的测试案例"
+      },
       "0.3.2": {
         "en": "Added hint for use of flexcharts by adapter tibberLink",
         "de": "Hinweis ergänzt über die Verwendung von Flexcharts durch Adapter tibberLink",
@@ -80,19 +93,6 @@
         "pl": "Fixes for issue # 36",
         "uk": "Виправлення для випуску #36",
         "zh-cn": "修复第36期"
-      },
-      "0.1.4": {
-        "en": "Fixes for issue #34\nFixes for issue #33",
-        "de": "Fehler behoben #34\nFehler behoben #33",
-        "ru": "#34\n#33",
-        "pt": "Correções para edição #34\nCorreções para problema #33",
-        "nl": "Fixes voor probleem #34\nFixes voor probleem #33",
-        "fr": "Corrections pour le numéro 34\nCorrections pour le numéro 33",
-        "it": "Correzioni per numero #34\nFissi per emissione #33",
-        "es": "Arreglos para el número #34\nArreglos para el número #33",
-        "pl": "Fixes for issue # 34\nFixes for issue # 33",
-        "uk": "Виправлення для випуску #34\nВиправлення для випуску #33",
-        "zh-cn": "第34期的修改\n修复第33期"
       }
     },
     "titleLang": {
@@ -249,6 +249,5 @@
       },
       "native": {}
     }
-
   ]
 }
