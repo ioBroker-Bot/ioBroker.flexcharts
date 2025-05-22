@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "news": {
+      "0.4.1": {
+        "en": "Fix for issue #96 (findings of repository checker)",
+        "de": "Fix für issue #96 (Ergebnisse des Repository-Checkers)",
+        "ru": "Исправление для выпуска #96 (находки проверки хранилища)",
+        "pt": "Fix para a edição #96 (definição do verificador de repositório)",
+        "nl": "Fix voor probleem #96 (bevindingen van repository checker)",
+        "fr": "Correction pour le numéro 96 (recherches du vérificateur du dépôt)",
+        "it": "Fissare per numero #96 (finanze di repository checker)",
+        "es": "Fijación para el número #96 (definiciones de repositorio)",
+        "pl": "Fix for issue # 96 (wyniki weryfikacji repozytorium)",
+        "uk": "Виправлення для випуску #96 (фінінги репозиторійного чекера)",
+        "zh-cn": "修复第96期(查找仓库检查器)"
+      },
       "0.4.0": {
         "en": "Added functionality to support event driven functions within charts, ref. issue #85\nAdded timeout for script as source\nAdded test cases for integration testing",
         "de": "Funktionalität hinzugefügt, um ereignisgesteuerte Funktionen innerhalb von Charts zu unterstützen, siehe Issue #85\nTimeout für Skript als Quelle hinzugefügt\nTestfälle für Integrationstests hinzugefügt",
@@ -80,19 +93,6 @@
         "pl": "Naprawa do wydania # 37",
         "uk": "Виправлення для випуску #37",
         "zh-cn": "解决第37期"
-      },
-      "0.1.5": {
-        "en": "Fixes for issue #36",
-        "de": "Fehler behoben #36",
-        "ru": "#36",
-        "pt": "Correções para edição #36",
-        "nl": "Fixes voor probleem #36",
-        "fr": "Corrections pour le numéro 36",
-        "it": "Correzioni per numero #36",
-        "es": "Arreglos para el número #36",
-        "pl": "Fixes for issue # 36",
-        "uk": "Виправлення для випуску #36",
-        "zh-cn": "修复第36期"
       }
     },
     "titleLang": {

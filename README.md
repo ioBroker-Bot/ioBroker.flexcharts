@@ -228,7 +228,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.4.1 (2025-05-22)
 * (MyHomeMyData) Fix for issue #96 (findings of repository checker)
 
 ### 0.4.0 (2025-03-24)
