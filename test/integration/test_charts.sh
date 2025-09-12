@@ -158,8 +158,8 @@ test_curl "Check for callback share_dataset dark mode" "http://$HOST:$PORT/flexc
 test_curl "Check for callback share_dataset dark mode and refresh 2" "http://$HOST:$PORT/flexcharts/echarts.html?source=script&message=demo_share_dataset&darkmode&refresh=2" "callback.share_dataset.dark.rf2" "$MODE"
 test_curl "Check for callback share_dataset dark mode and refresh 10" "http://$HOST:$PORT/flexcharts/echarts.html?source=script&message=demo_share_dataset&darkmode&refresh=10" "callback.share_dataset.dark.rf10" "$MODE"
 test_curl "Check for timeout on callback with wrong message" "http://$HOST:$PORT/flexcharts/echarts.html?source=script&message=message_for_timeout" "callback.timeout" "$MODE"
-test_curl "Check for echarts.js" "http://$HOST:$PORT/flexcharts/echarts.min.js" "echarts.min.js" "$MODE"
-test_curl "Check for echarts-gl.min.js" "http://$HOST:$PORT/flexcharts/echarts-gl.min.js" "echarts-gl.min.js" "$MODE"
+test_curl "Check for changes in Apache echarts.min.js" "http://$HOST:$PORT/flexcharts/echarts.min.js" "echarts.min.js" "$MODE"
+test_curl "Check for changes in Apache echarts-gl.min.js" "http://$HOST:$PORT/flexcharts/echarts-gl.min.js" "echarts-gl.min.js" "$MODE"
 
 # Check for number of failed tests and finalize
 if [ "$CNT_NOK" != "0" ]
