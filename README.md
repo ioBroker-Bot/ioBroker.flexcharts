@@ -229,7 +229,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
-* (MyHomeMyData) Fixes for issue #114 (findings of repository checker)
+* (MyHomeMyData) Migration to ESLint 9. Fixes issues #107 (Migration to ESLint 9) and #114 (findings of repository checker)
 
 ### 0.4.1 (2025-05-22)
 * (MyHomeMyData) Fix for issue #96 (findings of repository checker)
