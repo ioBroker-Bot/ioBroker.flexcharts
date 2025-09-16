@@ -13,7 +13,7 @@
   <body>
     <div id="main" ></div>
     <script>
-      var jsopts = { /* chartOptions */ };
+      var option = { /* chartOptions */ };
       var myChart = echarts.init(document.getElementById('main'),null,{
         width: window.innerWidth-10,
         height: window.innerHeight-20,
@@ -26,7 +26,7 @@
         });
       });
 
-      myChart.setOption(jsopts);
+      myChart.setOption(option);
 
       /* onEventFunctions() */
 
