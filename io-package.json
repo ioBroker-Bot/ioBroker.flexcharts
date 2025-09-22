@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "flexcharts",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "news": {
+      "0.5.0": {
+        "en": "Changed internal naming of chart's options from 'jsopts' to 'option'. If you're using event driven functions within your charts, you may need to adapt the naming accordingly. Pls. refer to Readme.\nMigration to ESLint 9. Fixes issues #107 (Migration to ESLint 9) and #114 (findings of repository checker)",
+        "de": "Der interne Variablenname der Chart-Optionen wurde von 'jsopts' auf 'option' geändert. Wenn Sie ereignisgesteuerte Funktionen in Ihren Diagrammen verwenden, müssen Sie möglicherweise den Variablennamen entsprechend anpassen. Bitte beachten Sie die Readme.\nMigration zu ESLint 9 durchgeführt. Behebt Issues #107 (Migration to ESLint 9) und #114 (findings of repository checker).",
+        "ru": "Изменено внутреннее название опций графика с 'jsopts' на 'option'. Если вы используете функции, основанные на событиях в ваших графиках, вам может потребоваться адаптировать названия соответственно. Пожалуйста, обратитесь к Readme.\nМиграция на ESLint 9. Исправлены проблемы #107 (Миграция на ESLint 9) и #114 (находки репозитория проверки)",
+        "pt": "Alterado o nome interno das opções do gráfico de 'jsopts' para 'option'. Se você estiver usando funções baseadas em eventos nos seus gráficos, pode ser necessário adaptar o nome de acordo. Por favor, consulte o Leia-me.\nMigração para ESLint 9. Corrige problemas #107 (Migração para ESLint 9) e #114 (resultados do verificador de repositório)",
+        "nl": "Interne naamgeving van de opties van de grafiek is gewijzigd van 'jsopts' naar 'option'. Als je event-driven functies gebruikt in je grafieken, moet je mogelijk de naamgeving aanpassen. Zie Readme voor meer informatie.\nMigratie naar ESLint 9. Lost problemen #107 (Migratie naar ESLint 9) en #114 (bevindingen van repository checker) op.",
+        "fr": "Changement de la dénomination interne des options des graphiques de 'jsopts' à 'option'. Si vous utilisez des fonctions événementielles dans vos graphiques, vous devrez peut-être adapter la dénomination en conséquence. Veuillez consulter le fichier Lisez-moi.\nMigration vers ESLint 9. Résout les problèmes #107 (Migration vers ESLint 9) et #114 (constatations de l'analyseur de dépôt)",
+        "it": "Modificato il nome interno delle opzioni del grafico da 'jsopts' a 'opzione'. Se stai utilizzando funzioni basate sugli eventi all'interno dei tuoi grafici, potresti dover adattare il nome di conseguenza. Consultare il file Readme.\nMigrazione a ESLint 9. Risolve i problemi #107 (Migrazione a ESLint 9) e #114 (trovati del repository checker)",
+        "es": "Se cambió el nombre interno de las opciones del gráfico de 'jsopts' a 'option'. Si estás utilizando funciones basadas en eventos dentro de tus gráficos, es posible que necesites adaptar el nombre en consecuencia. Por favor, consulta el README.\nMigración a ESLint 9. Soluciona los problemas #107 (Migración a ESLint 9) y #114 (hallazgos del comprobador de repositorios)",
+        "pl": "Zmieniono wewnętrzną nazwę opcji wykresu z 'jsopts' na 'option'. Jeśli korzystasz z funkcji zdarzeniowych w swoich wykresach, możesz potrzebować dostosować nazewnictwo. Proszę odwołać się do pliku Readme.\nMigracja do ESLint 9. Naprawia problemy #107 (Migracja do ESLint 9) i #114 (znaleziska sprawdzacza repozytorium).",
+        "uk": "Змінено внутрішнє ім'я параметрів діаграми з 'jsopts' на 'option'. Якщо ви використовуєте функції, які спровоковуються подіями у вашій діаграмі, можливо, знадобиться адаптувати іменування відповідним чином. Будь ласка, звертайтеся до файлу Readme.\nМіграція до ESLint 9. Виправлення проблем #107 (Міграція до ESLint 9) та #114 (виявлення в репозиторії чекера)",
+        "zh-cn": "将图表选项的内部命名从'jsopts'更改为'option'。 如果您正在图表中使用基于事件的函数，则可能需要相应调整命名。 请参考自述文件。\n迁移至 ESLint 9。修复问题 #107（迁移至 ESLint 9）和 #114（存储库检查器的发现）"
+      },
       "0.4.1": {
         "en": "Fix for issue #96 (findings of repository checker)",
         "de": "Fix für issue #96 (Ergebnisse des Repository-Checkers)",
@@ -80,19 +93,6 @@
         "pl": "Zaktualizowany readme. Dodano sekcje Szablony i referencje.\nFix for issue # 41 (wyniki weryfikacji repozytorium)\nAktualizacja ECharts do wersji 5.5.1, patrz numer # 40\nFix for issue # 39 (ostrzeżenia html)\nDodano opcję \"odśwież\", aby włączyć automatyczną aktualizację wykresu",
         "uk": "Оновлене читке. Додано розділи Шаблони та посилання.\nВиправлення для випуску #41 (підписи репозиторійного чекера)\nОновлено ECharts до версії 5.5.1, див. питання #40\nВиправлення проблеми #39 (html попередження)\nДодано параметр 'refresh' для автоматичного оновлення діаграми",
         "zh-cn": "更新的读数。 添加的章节模板和参考.\n为第41期(查找仓库检查器)进行修复\n最新ECharts至5.5.1版本,见问题40\n修复第39期( html 警告)\n添加“ 新鲜” 选项以启用图表的自动更新"
-      },
-      "0.1.6": {
-        "en": "Fix for issue #37",
-        "de": "Problem behoben issue #37",
-        "ru": "#37",
-        "pt": "Fix para a edição #37",
-        "nl": "Fix voor probleem #37",
-        "fr": "Correction pour l'émission #37",
-        "it": "Risolvere il numero #37",
-        "es": "Corrección para el número #37",
-        "pl": "Naprawa do wydania # 37",
-        "uk": "Виправлення для випуску #37",
-        "zh-cn": "解决第37期"
       }
     },
     "titleLang": {
