@@ -206,7 +206,7 @@ Use **javascript** as data source: `http://localhost:8082/flexcharts/echarts.htm
 
 ### Optional arguments
 * `&message=my_message` - sends "my_message" to javascript. Use `onMessage('my_message', (httpParams, callback) => { callback(mychart); })` to provide chart data. Defaults to `flexcharts`.
-* `&darkmode` - activates dark mode visualization of ECharts.
+* `&darkmode[=on|off|auto]` - specifies dark mode visualization of ECharts: 'off' => dark mode permanently off; 'on' or no value => dark mode permanently on; 'auto' => listening to the system's dark mode setting.
 * `&refresh=number` - do a refresh of chart ervery "number" seconds. Defaults to 60 seconds. Minimum allowed value is 5 seconds.
 * `&user_defined_arguments` - Add more parameters as per your need. All arguments are available within function `onMessage()` in object `httpParams`. See examples above and templates for more details.
 
@@ -230,9 +230,9 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### 0.5.0 (2025-09-17)
-* (MyHomeMyData) Changed internal naming of chart's options from 'jsopts' to 'option'. If you're using event driven functions within your charts, you may need to adapt the naming accordingly. Pls. refer to Readme.
-* (MyHomeMyData) Migration to ESLint 9. Fixes issues #107 (Migration to ESLint 9) and #114 (findings of repository checker)
+### **WORK IN PROGRESS**
+* (MyHomeMyData) Updated Apache ECharts to version 6.0.0
+* (MyHomeMyData) Added option to dynamically switch dark mode by listening to the system's setting. Based on Apache ECharts 6.
 
 ### 0.4.1 (2025-05-22)
 * (MyHomeMyData) Fix for issue #96 (findings of repository checker)
