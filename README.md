@@ -233,6 +233,8 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 ### **WORK IN PROGRESS**
 * (MyHomeMyData) Updated Apache ECharts to version 6.0.0
 * (MyHomeMyData) Added option to dynamically switch dark mode by listening to the system's setting. Based on Apache ECharts 6.
+* (MyHomeMyData) Added possibility to add self defined themes. Based on Apache ECharts 6.
+* (MyHomeMyData) Extended support for definition of onEvent functions. Now an unlimited number of functions can be defined instead of just one.
 
 ### 0.4.1 (2025-05-22)
 * (MyHomeMyData) Fix for issue #96 (findings of repository checker)
