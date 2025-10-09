@@ -155,6 +155,7 @@ test_curl "Check for flexcharts.0.info.chart2 dark mode w/o value" "http://$HOST
 test_curl "Check for flexcharts.0.info.chart2 dark mode on" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart2&darkmode=on" "info.chart2.dark" "$MODE"
 test_curl "Check for flexcharts.0.info.chart2 dark mode auto" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart2&darkmode=auto" "info.chart2.dark_auto" "$MODE"
 test_curl "Check for flexcharts.0.info.chart3 using embedded function" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart3" "info.chart3.default" "$MODE"
+test_curl "Check for flexcharts.0.info.chart4 using embedded function and theme switching" "http://$HOST:$PORT/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart4&darkmode=auto" "info.chart4.auto" "$MODE"
 test_curl "Check for callback w/o embedded function" "http://$HOST:$PORT/flexcharts/echarts.html?source=script&myjsonparams=\{\"chart\":\"chart1\"\}" "callback.chart1.default" "$MODE"
 test_curl "Check for callback w/ embedded function" "http://$HOST:$PORT/flexcharts/echarts.html?source=script&myjsonparams=\{\"chart\":\"chart2\"\}" "callback.chart2.default" "$MODE"
 test_curl "Check for callback share_dataset" "http://$HOST:$PORT/flexcharts/echarts.html?source=script&message=demo_share_dataset" "callback.share_dataset.default" "$MODE"
