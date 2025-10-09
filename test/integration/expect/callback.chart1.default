@@ -14,9 +14,6 @@
     <div id="main" ></div>
     <script>
       var option = {"tooltip":{"trigger":"axis"},"legend":{},"xAxis":[{"type":"category","data":["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]}],"yAxis":[{"type":"value"}],"series":[{"name":"Grid","type":"bar","color":"#ff9999","stack":"Supply","data":[8,19,21,50,26,0,36]},{"name":"PV","type":"bar","color":"#ff0000","stack":"Supply","data":[30,32,20,8,33,21,36]},{"name":"Household","type":"bar","color":"#66b3ff","stack":"Consumption","data":[16,12,11,13,14,9,12]},{"name":"Heat pump","type":"bar","color":"#006cd6","stack":"Consumption","data":[22,24,30,20,22,12,25]},{"name":"Wallbox","type":"bar","color":"#0000ff","stack":"Consumption","data":[0,15,0,25,23,0,35]}]};
-
-      /* registerTheme() */
-
       // Define used dark mode. Allowed modes: 'default', 'dark', 'auto'
       var myDarkMode = 'default';
       var myChart = echarts.init(document.getElementById('main'),null,{
@@ -54,9 +51,10 @@
       });
 
       myChart.setOption(option);
-      updateDarkMode();
 
-      /* onEventFunctions() */
+      /* userFunctions() */
+
+      updateDarkMode();
 
     </script>
   </body>

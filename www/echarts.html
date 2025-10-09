@@ -14,9 +14,6 @@
     <div id="main" ></div>
     <script>
       var option = { /* chartOptions */ };
-
-      /* registerTheme() */
-
       // Define used dark mode. Allowed modes: 'default', 'dark', 'auto'
       var myDarkMode = 'default';
       var myChart = echarts.init(document.getElementById('main'),null,{
@@ -54,9 +51,10 @@
       });
 
       myChart.setOption(option);
-      updateDarkMode();
 
-      /* onEventFunctions() */
+      /* userFunctions() */
+
+      updateDarkMode();
 
     </script>
   </body>
