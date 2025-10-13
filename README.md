@@ -17,10 +17,10 @@
 
 Flexcharts v0.6.0 is based on this new release and offers new features:
 * brand new default theme
-* passing over an unlimited number of own themes
+* possibility to pass over an unlimited number of own themes
 * dynamic theme switching, a typical scenario is listening to the system's dark mode and dynamically adjusting the chart's theme (add http parameter `&darkmode=auto` to activate)
 * new chart types
-* passing over an unlimited number of event driven functions
+* possibility to pass over an unlimited number of event driven functions
 
 **Remark:** You may keep to **ECharts v5 default theme** by simply adding the http parameter `&themev5`, e.g. `http://localhost:8082/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart1&themev5`
 
@@ -184,9 +184,9 @@ Here's a screen recording of this chart operated by flexcharts:
 
 To use event driven functions for your own charts I recommend to use a **script as source**. [Template 4](templates/flexchartsTemplate4.js) demonstrates the implementation. Please take care about following:
 * To make the chart dynamic you need to define functionality to handle events within the chart. This is done via definition of functions like `myChart.on("event",function(e){ ... });`
-* It's mandatory to name each of those functions with `myChart.on`
-* For handing over the functions definition to flexcharts it has to be converted to a **Javascript String**. This could be done by consequently using quotation marks (`"`) inside the function and then enclosing it in apostrophes (`'`) - or the other way round. You may use a compactor, e.g. [this one](https://www.toptal.com/developers/javascript-minifier), to reduce the needed space.
-* Finally, you have to provide all parts, definition of chart and definition of event function(s), as an **array of Javascript Strings** via the callback. In template 4 it's done as `callback([strify.stringify(option), onEvent]);` where `option` contains the chart definition and `onEvent` contains the definition of event function as a Javascript String. If you define more than one function you can include it to the the String `onEvent` or you can it as additional array element, such as `callback([strify.stringify(option), onEvent1, onEvent2, onEvent3]);`. Number for function definitions is not limited.
+* It's mandatory to name each of those functions with `myChart.on()`
+* For passing over the functions definition to flexcharts it has to be converted to a **Javascript String**. This could be done by consequently using quotation marks (`"`) inside the function and then enclosing it in apostrophes (`'`) - or the other way round. You may use a compactor, e.g. [this one](https://www.toptal.com/developers/javascript-minifier), to reduce the needed space.
+* Finally, you have to provide all parts, definition of chart and definition of event function(s), as an **array of Javascript Strings** via the callback. In template 4 it's done as `callback([strify.stringify(option), onEvent]);` where `option` contains the chart definition and `onEvent` contains the definition of event function as a Javascript String. If you define more than one function you can include it to the String `onEvent` or you can add it as an additional array element, such as `callback([strify.stringify(option), onEvent1, onEvent2, onEvent3]);`. Number of function definitions is not limited.
 * To stringify the definition of the chart (`option`) you have to use `javascript-stringify` as described in previous chapter.
 
 Remark: When npm module `javascript-stringify` is installed, it's functionality could also be used by malicious code (Cross-Site-Scripting). Therefore, ioBroker should not be accessible from the Internet when using this module.
@@ -197,7 +197,7 @@ It's also possible to use this feature with a **state as source** of data. Howev
    * To enclose a String quotation marks have to be used. Therefore within the String only apostrophes or escaped quotation marks (`\"`) are allowed.
    * Within a String no new line is allowed.
 * It's a good idea to make sure about validity of the array by using a JSON validator, e.g. [this one](https://jsonformatter.curiousconcept.com/#).
-* Of course you want to manipulate the data of the chart. But the data is part of the definition of the chart. So you have to read and write the array of JSON Strings using Javascript. Therefore I recomment to use a script as source of data as described above.
+* Of course you want to manipulate the data of the chart. But the data is part of the definition of the chart. So you have to read and write the array of JSON Strings using Javascript. Therefore I recommend to use a script as source of data as described above.
 * However, an example is available within info part of flexcharts: `flexcharts.0.info.chart3`. To view in a browser use `http://localhost:8082/flexcharts/echarts.html?source=state&id=flexcharts.0.info.chart3`
 
 ### Working with Apache EChart themes (v6 feature)
@@ -219,9 +219,10 @@ To use a **state as source** for passing themes:
 * add the charts definition as 1st element of the array
 * prepare the theme(s) as a stringified JSON object. You use a JSON formatter, e.g. https://jsonformatter.curiousconcept.com/ with template 'compact', to compact the JSON object to a string.
 * add the theme as 2nd element to the state as an array (see above): `[<name of theme>, <definition of theme>]`
-* Finally the state should look like `[<stringified definition of chart>,[<name of theme 1>, <stringified definition of theme 1>], [<name of theme 2>, <stringified definition of theme 2>]]`
+* Finally the state should look like `[<stringified definition of chart>,['default', <stringified definition of default theme>]]`.
+* an example is available at `flexcharts.0.info.chart4` (only on newly installed instance).
 
-Number of theme definitions is not limited. However, to activate themes named other than 'default' or 'dark', you have to define own functionality containing the expression `myChart.setTheme(<name of theme>);`.
+Number of theme definitions is not limited. However, to activate themes named other than 'default' or 'dark', you have to define own functionality containing the expression `myChart.setTheme(<name of theme>);` and code to call it on certain condition.
 
 ## Templates
 Javascript templates are available for some uses cases:
