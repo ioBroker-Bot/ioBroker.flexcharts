@@ -14,7 +14,8 @@
     <div id="main" ></div>
     <script>
       var option = { /* chartOptions */ };
-      var autoDarkMode = false;
+      // Define used dark mode. Allowed modes: 'default', 'dark', 'auto'
+      var myDarkMode = 'default';
       var myChart = echarts.init(document.getElementById('main'),null,{
         width: window.innerWidth-10,
         height: window.innerHeight-20,
@@ -29,19 +30,31 @@
 
       const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
       function updateDarkMode() {
-          if (autoDarkMode) {
+        switch (myDarkMode) {
+          case 'default':
+            myChart.setTheme('default');
+            break;
+          case 'dark':
+            myChart.setTheme('dark');
+            break;
+          case 'auto':
             const isDarkMode = darkModeMediaQuery.matches;
             myChart.setTheme(isDarkMode ? 'dark' : 'default');
-          }
+            break;
+          default:
+            myChart.setTheme('default');
+            break;
+        }
       }
       darkModeMediaQuery.addEventListener('change', () => {
           updateDarkMode();
       });
 
       myChart.setOption(option);
-      updateDarkMode();
 
-      /* onEventFunctions() */
+      /* userFunctions() */
+
+      updateDarkMode();
 
     </script>
   </body>
