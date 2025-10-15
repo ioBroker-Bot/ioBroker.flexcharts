@@ -224,6 +224,13 @@ To use a **state as source** for passing themes:
 
 Number of theme definitions is not limited. However, to activate themes named other than 'default' or 'dark', you have to define own functionality containing the expression `myChart.setTheme(<name of theme>);` and code to call it on certain condition.
 
+**Give it a try:**
+* Create a simple chart based on [this example](https://echarts.apache.org/examples/en/editor.html?c=area-stack)
+* to pass data to Flexcharts use `callback(JSON.stringify(option));`
+* Now add some changes to default theme. Replace the callback by this version:
+`callback([JSON.stringify(option), ['default', '{"title":{"left":"left"},"color":["#ff715e","#ffaf51","#ffee51","#8c6ac4","#715c87"],"backgroundColor":"rgba(64,64,64,0.5)"}']]);`
+* You should see a left-aligned title and changed colors for the data and background.
+
 ## Templates
 Javascript templates are available for some uses cases:
 * chart using data from history adapter: [template1](templates/flexchartsTemplate1.js)
