@@ -24,3 +24,6 @@ todo.md
 
 # integration test
 test/integration/.*
+
+#ignore .commitinfo created by ioBroker release script
+.commitinfo
